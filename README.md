@@ -44,11 +44,11 @@ Connect people base in what they have in common. Answer a questionnaire and base
 | `/`                          | Home             | public `<Route>`           | Home page.                                                |
 | `/profile`              | Profile         | user only `<PrivateRoute>` | User and player profile for the current user.             |
 | `/profile/edit`         | EditProfile      | user only `<PrivateRoute>` | Edit user profile form.                                   |
-| `/questions`           | Questions | user only `<PrivateRoute>` | Some question pages user needs to answer.                               |
-| `/profile/updated`               | Profile with the questions the user answered   | user only `<PrivateRoute>` | Profile with the answer the user picked.                                         |
+| `/questions`           | Questions | user only `<PrivateRoute>` | Some question pages user needs to answer.                               |                                       |
 | `/users` | User List | user only `<PrivateRoute>` | Users List. Shows list of all users the user has in common with. |
 | `/users/profile/:id`    | UserDetails    | user only `<PrivateRoute>` | Single user details.                                    |
-| `/user/message/:id`    | Message        | user only `<PrivateRoute>` | User can get in contact with the other user.                                 |
+| `/user/chat/:id`    | Message        | user only `<PrivateRoute>` | User can get in contact with the other user.    
+| `/user/chat`    | Message        | user only `<PrivateRoute>` | User can see all the chats                               |
 
 
 
@@ -138,6 +138,10 @@ Components:
 
 ```javascript
  {
+    userId:  {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "User"
+     }
    message: { type: [String], required: true },
  }
 ```
@@ -147,7 +151,9 @@ Components:
 
 ```javascript
 {
-  chat: { type: String, required: true },
+    usersId:  Type.object,,,,,,  array 
+   
+  chat: { type: String, required: true },  Type.object,,,,,, 
 
 }
 ```
@@ -172,6 +178,11 @@ Components:
 
 | DELETE      | `/api/profile`     |                              | 200            | 400          | delete your own profile                                                |
 | POST         | `/api/edit/profile`           |                              | 201            | 400          | Edit Profile                                                 |
+| POST         | `/api/message`           |                              | 201            | 400          | Message                                                |
+| Get        | `/api/message`           |                              | 201            | 400          | Get message                                                |
+
+| POST         | `/api/chat`           |                              | 201            | 400          | Chat                                                |
+
 
 
 <br>

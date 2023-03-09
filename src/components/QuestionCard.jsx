@@ -1,40 +1,49 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-function Question4() {
-  const [selectedAnswer, setSelectedAnswer] = useState('');
+function QuestionCard(props) {
+  let { data, onAnswerChange } = props;
+  const [selectedAnswer, setSelectedAnswer] = useState("");
 
-  const handleAnswer = (value) => setSelectedAnswer(value);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/api/questions/${id}`,
-        { questionnaire: { [selectedAnswer]: true } }
-      );
-      console.log(response.data);
-      navigate('/question5');
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const navigate = useNavigate();
-
-  const buttonStyle = (value) => {
-    if (selectedAnswer === value) {
-      return { backgroundColor: 'red' };
-    } else {
-      return {};
-    }
+  const handleChange = (event) => {
+    setSelectedAnswer(event.target.value);
+    data = [];
   };
 
   return (
+    <div>
+      <h3>{data.question}</h3>
+      {data.answers.map((answer, index) => {
+        return (
+          <label key={index}>
+            <input
+              type="radio"
+              name="answer"
+              value={answer}
+              id={`answer-${index}`}
+              onChange={handleChange}
+              checked={selectedAnswer === answer}
+            />
+            <span>{answer}</span>
+          </label>
+        );
+      })}
+      <button
+        onClick={() => {
+          onAnswerChange(selectedAnswer);
+          setSelectedAnswer("");
+        }}
+      >
+        Next
+      </button>
+    </div>
+  );
+}
+
+/*   return (
+
     <section>
-      <h1>Question 4</h1>
+      <h1>Question 1</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Question1</label>
 
@@ -102,9 +111,8 @@ function Question4() {
         <button type="submit">Submit</button>
       </form>
 
-      <Link to="/question5">Next</Link>
+      <Link to="/question2">Next</Link>
     </section>
-  );
-}
+  ) */
 
-export default Question4;
+export default QuestionCard;
