@@ -22,33 +22,52 @@ function Profile() {
 
 export default Profile */
 
-
-
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { AuthContext } from '../context/auth.context'
+import React, { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
+import axios from "axios";
 
 function Profile() {
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+  const [updatedUser, setUpdatedUser] = useState(null);
 
+  const getUpdatedUser = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/profile/${user._id}`
+      );
+      setUpdatedUser(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const userDidQuestionnaire = user && user.questionnaireCompleted  // assuming user object has a "questionnaireCompleted" property
+  useEffect(() => {
+    getUpdatedUser();
+  }, []);
 
   return (
     <div>
       <h1>Profile</h1>
-    
-      <h3>Hi {user.name}</h3>
-  
-   
- 
-      {userDidQuestionnaire ? (
+
+      <h3>Hi {updatedUser && updatedUser.name}</h3>
+
+      {updatedUser && (
+        <>
+          <p>Color: {updatedUser.questionnaire[0]}</p>
+          <p>You like to: {updatedUser.questionnaire[1]}</p>
+          <p>Favoutite thing: {updatedUser.questionnaire[2]}</p>
+          <p>What is what: {updatedUser.questionnaire[3]}</p>
+        </>
+      )}
+
+            {updatedUser ? (
         <Link to="/profile/questionnaire">Redo Questionnaire</Link>
       ) : (
         <Link to="/profile/questionnaire">Start Questionnaire</Link>
       )}
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

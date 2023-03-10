@@ -1,60 +1,67 @@
-
-import React, {useState, useContext} from 'react'
-import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../context/auth.context'
+import React, { useState, useContext } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 
 function Login() {
-  
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-   
-    const handleEmail = (e) => setEmail(e.target.value)
-    const handlePassword = (e) => setPassword(e.target.value)
+  const navigate = useNavigate();
 
-    const {authenticateUser} = useContext(AuthContext)
+  const handleEmail = (e) => setEmail(e.target.value);
+  const handlePassword = (e) => setPassword(e.target.value);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+  const { authenticateUser } = useContext(AuthContext);
 
-        try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, 
-            { email, password})
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-            
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/auth/login`,
+        { email, password }
+      );
 
-           localStorage.setItem("authToken", response.data.authToken)
-            authenticateUser()
+      localStorage.setItem("authToken", response.data.authToken);
+      authenticateUser();
 
-            console.log(response.data.authToken) 
+      console.log(response.data.authToken);
 
-            navigate('/profile')
-
-        } catch (error) {
-            console.log(error)
-        }
+      navigate("/profile");
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    const navigate = useNavigate()
-   
   return (
     <section>
-    <h1>Login</h1>
-    <form onSubmit={handleSubmit}>
-       
-        <label htmlFor='email'>Email</label>
-        <input type="email" name='email' id='email' value={email} onChange={handleEmail}></input>
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value={email}
+          onChange={handleEmail}
+        ></input>
 
-        <label htmlFor='password'>Password</label>
-        <input type="password" name='password' id='password' value={password} onChange={handlePassword}></input>
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          value={password}
+          onChange={handlePassword}
+        ></input>
 
-        <button type='submit'>Login</button>
-    </form>
-    <p>Dont have an account?</p>
-    <Link to="/signup">Signup</Link>
+        <button type="submit">Login</button>
+      </form>
+      <p>Dont have an account?</p>
+      <Link to="/signup">Signup</Link>
     </section>
-  )
+  );
 }
 
-export default Login
+export default Login;
