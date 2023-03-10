@@ -45,7 +45,7 @@ Connect people base in what they have in common. Answer a questionnaire and base
 | `/profile`              | Profile         | user only `<PrivateRoute>` | User and player profile for the current user.             |
 | `/profile/edit`         | EditProfile      | user only `<PrivateRoute>` | Edit user profile form.                                   |
 | `/questions`           | Questions | user only `<PrivateRoute>` | Some question pages user needs to answer.                               |                                       |
-| `/users` | User List | user only `<PrivateRoute>` | Users List. Shows list of all users the user has in common with. |
+| `/clicks` | User List | user only `<PrivateRoute>` | Users List. Shows list of all users the user has in common with. |
 | `/users/profile/:id`    | UserDetails    | user only `<PrivateRoute>` | Single user details.                                    |
 | `/user/chat/:id`    | Message        | user only `<PrivateRoute>` | User can get in contact with the other user.    
 | `/user/chat`    | Message        | user only `<PrivateRoute>` | User can see all the chats                               |

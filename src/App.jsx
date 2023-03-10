@@ -7,6 +7,7 @@ import Login from "./pages/Login"
 import Profile from "./pages/Profile";
 import Private from "./components/Private";
 import Questionnaire from "./pages/Questionnaire"
+import AllClicks from "./pages/AllClicks";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
 
         <Route path="/" element={ <Home /> } />
         <Route path="/signup" element={<Signup/>}/>
-        <Route path="/login" element={<Login/>}/>        
+        <Route path="/login" element={<Login/>}/>      
+        <Route path="/clicks" element={<AllClicks/>} />
           
         <Route path="/profile" element={
         <Private>

@@ -7,7 +7,6 @@ function AuthWrapper(props) {
     const [loggedIn, setLoggedIn] = useState(false)
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
-  
 
     //functions and methods
 
@@ -26,15 +25,12 @@ function AuthWrapper(props) {
                   setLoggedIn(true)
                   setUser(response.data)
                   setLoading(false)
-                  
             } catch (error) {
                 console.log(error)
                 //here we know we got an error
                 setLoggedIn(false)
                 setUser(null)
                 setLoading(false)
-
-
             }
 
         } else {

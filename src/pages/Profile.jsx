@@ -52,6 +52,8 @@ function Profile() {
 
       <h3>Hi {updatedUser && updatedUser.name}</h3>
 
+      <Link to="/clicks"> Clicks and chicks </Link>
+
       {updatedUser && (
         <>
           <p>Color: {updatedUser.questionnaire[0]}</p>
@@ -60,7 +62,7 @@ function Profile() {
           <p>What is what: {updatedUser.questionnaire[3]}</p>
         </>
       )}
-
+ 
             {updatedUser ? (
         <Link to="/profile/questionnaire">Redo Questionnaire</Link>
       ) : (
