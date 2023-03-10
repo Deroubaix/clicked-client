@@ -1,42 +1,19 @@
-/* import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { AuthContext } from '../context/auth.context'
-
-function Profile() {
-  const {loggedIn, user, logout} = useContext(AuthContext)
- 
-
-  return (
-    <div>
-      <h1>Profile</h1>
-      <h3>Hi {user.name}</h3>
-
-      {user.name ? (
-        <Link to="/question1">Redo Questionnaire</Link>
-      ) : (
-        <Link to="/question1">Start Questionnaire</Link>
-      )}
-    </div>
-  )
-}
-
-export default Profile */
-
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 
-function Profile() {
+function ClickDetails() {
   const { user } = useContext(AuthContext);
   const [updatedUser, setUpdatedUser] = useState(null);
 
   const getUpdatedUser = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/profile/${user._id}`
+        `${import.meta.env.VITE_API_URL}/api/clicks/${user._id}`
       );
       setUpdatedUser(response.data);
+      console.log(setUpdatedUser);
     } catch (error) {
       console.log(error);
     }
@@ -72,4 +49,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default ClickDetails;

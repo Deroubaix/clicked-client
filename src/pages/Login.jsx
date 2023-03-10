@@ -23,8 +23,8 @@ function Login() {
         { email, password }
       );
 
-      localStorage.setItem("authToken", response.data.authToken);
-      authenticateUser();
+       localStorage.setItem("authToken", response.data.authToken);
+      await authenticateUser();
 
       console.log(response.data.authToken);
 

@@ -53,7 +53,6 @@ function AllClicks() {
 
 export default AllClicks; */
 
-
 /* import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
@@ -92,43 +91,48 @@ function AllClicks() {
 
 export default AllClicks; */
 
-
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 
-function AllUsers() {
-  const { users } = useContext(AuthContext);
-  const [allUsers, setAllUsers] = useState([]);
+function AllClicks() {
+  const [AllClicks, setAllClicks] = useState([]);
 
-  const getAllUsers = async () => {
+  const storedToken = localStorage.getItem("authToken");
+
+  const getAllClicks = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/clicks`
+        `${import.meta.env.VITE_API_URL}/api/clicks`,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
       );
-      setAllUsers(response.data);
+      setAllClicks(response.data);
+      console.log(setAllClicks);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getAllUsers();
+    getAllClicks();
   }, []);
 
   return (
     <div>
       <h1>Clicks</h1>
-      {allUsers.map((user) => (
-        <div key={user._id}>
-          <h2>{user.name}</h2>
-          <p>{user.description}</p>
-          <img src={user.image} alt={user.name} />
-          <p>{user.questionnaire}</p>
-        </div>
-      ))}
+      {AllClicks.length &&
+        AllClicks.map((user) => (
+          <div key={user._id}>
+            <h2>{user.name}</h2>
+            <p>{user.description}</p>
+            <img src={user.image} alt={user.name} />
+            <p>{user.questionnaire}</p>
+          </div>
+        ))}
     </div>
   );
 }
 
-export default AllUsers;
+export default AllClicks;
