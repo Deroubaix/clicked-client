@@ -5,16 +5,16 @@ import axios from "axios";
 
 function ClickDetails() {
   // const { user } = useContext(AuthContext);
-  const [userDetails, setUserDetails] = useState(null);
+  const [userDetails, setUserDetails] = useState([]);
 
-  const {id} = useParams()
+  const { id } = useParams();
 
-  const { questionnaire, name } = userDetails;
+  // const {  name } = userDetails;
 
   const getUserDetails = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/clicks/${user._id}`
+        `${import.meta.env.VITE_API_URL}/api/clicks/${id}`
       );
       setUserDetails(response.data);
       console.log(setUserDetails);
@@ -25,26 +25,23 @@ function ClickDetails() {
 
   useEffect(() => {
     getUserDetails();
+    console.log(id, userDetails?.name); // optional chain: to avoid breaking if it doesnt have the data
   }, []);
 
   return (
     <div>
       <h1>User Profile</h1>
-
-      <h3>Hi, {user.name}</h3>
-
-      {userDetails && (
+      <h3>Hi, {userDetails?.name}</h3>{" "}
+      {/* because we can never trust the backend and be sure that the data is there  */}
+      {userDetails.length && (
         <>
-          <p>Color: {questionnaire[0]}</p>
+          <p>Color: {userDetails?.questionnaire[0]}</p>
           <p>You like to: {questionnaire[1]}</p>
           <p>Favoutite thing: {questionnaire[2]}</p>
           <p>What is what: {questionnaire[3]}</p>
         </>
       )}
-
-
-        <Link to="/send/message">Send Message</Link>
-
+      <Link to="/message">Send Message</Link>
     </div>
   );
 }
