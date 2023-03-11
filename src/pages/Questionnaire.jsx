@@ -54,6 +54,7 @@ function Questionnaire() {
 
   //You can delete this if you want
   useEffect(() => {
+
     console.log(answers);
     console.log(currentStep);
     console.log(questionData.length);

@@ -94,9 +94,10 @@ export default AllClicks; */
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function AllClicks() {
-  const [AllClicks, setAllClicks] = useState([]);
+  const [allClicks, setAllClicks] = useState([]);
 
   const storedToken = localStorage.getItem("authToken");
 
@@ -108,8 +109,12 @@ function AllClicks() {
           headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
+
+      console.log("THIS", response.data);
+
       setAllClicks(response.data);
-      console.log(setAllClicks);
+
+      console.log(allClicks);
     } catch (error) {
       console.log(error);
     }
@@ -122,13 +127,14 @@ function AllClicks() {
   return (
     <div>
       <h1>Clicks</h1>
-      {AllClicks.length &&
-        AllClicks.map((user) => (
+      {allClicks.length &&
+        allClicks.map((user) => (
           <div key={user._id}>
             <h2>{user.name}</h2>
             <p>{user.description}</p>
             <img src={user.image} alt={user.name} />
             <p>{user.questionnaire}</p>
+            <Link to={`/clicks/${user._id}`}> see details </Link>
           </div>
         ))}
     </div>
