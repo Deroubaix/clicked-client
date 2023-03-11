@@ -17,7 +17,6 @@ function ClickDetails() {
         `${import.meta.env.VITE_API_URL}/api/clicks/${id}`
       );
       setUserDetails(response.data);
-      console.log(setUserDetails);
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +40,9 @@ function ClickDetails() {
           <p>What is what: {questionnaire[3]}</p>
         </>
       )}
-      <Link to="/message">Send Message</Link>
+      <Link to={`/chat/${encodeURIComponent(JSON.stringify(userDetails))}`}>
+        Send Message
+      </Link>
     </div>
   );
 }

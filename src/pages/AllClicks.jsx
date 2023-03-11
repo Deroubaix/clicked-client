@@ -110,7 +110,7 @@ function AllClicks() {
         }
       );
 
-      console.log("THIS", response.data);
+      
 
       setAllClicks(response.data);
 
