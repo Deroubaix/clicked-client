@@ -4,18 +4,16 @@ import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 
 function ClickDetails() {
-  // const { user } = useContext(AuthContext);
   const [userDetails, setUserDetails] = useState([]);
 
   const { id } = useParams();
-
-  // const {  name } = userDetails;
 
   const getUserDetails = async () => {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/clicks/${id}`
       );
+      console.log(response.data);
       setUserDetails(response.data);
     } catch (error) {
       console.log(error);
@@ -24,28 +22,36 @@ function ClickDetails() {
 
   useEffect(() => {
     getUserDetails();
-    console.log(id, userDetails?.name); // optional chain: to avoid breaking if it doesnt have the data
   }, []);
 
   return (
     <div>
       <h1>User Profile</h1>
-      <h3>{userDetails?.name}</h3>{" "}
-      {/* because we can never trust the backend and be sure that the data is there  */}
-      {userDetails.length && (
+      {userDetails && (
         <>
-          <p>Color: {userDetails?.questionnaire[0]}</p>
-          <p>You like to: {questionnaire[1]}</p>
-          <p>Favoutite thing: {questionnaire[2]}</p>
-          <p>What is what: {questionnaire[3]}</p>
+          <h3>{userDetails.name}</h3>
+          {userDetails.imageUrl && (
+            <img
+              src={userDetails.imageUrl}
+              alt={`${userDetails.name}'s profile image`}
+              style={{ maxWidth: "200px" }}
+            />
+          )}
+          {userDetails.description && <p>{userDetails.description}</p>}
+          {userDetails.questionnaire && (
+            <>
+              <p>Color: {userDetails.questionnaire[0]}</p>
+              <p>You like to: {userDetails.questionnaire[1]}</p>
+              <p>Favourite thing: {userDetails.questionnaire[2]}</p>
+              <p>What is what: {userDetails.questionnaire[3]}</p>
+            </>
+          )}
+          <Link to={`/chat/${encodeURIComponent(JSON.stringify(userDetails))}`}>
+            Send Message
+          </Link>
+          <Link to={"/chat/chatroom"}>Enter chatroom</Link>
         </>
       )}
-      <Link to={`/chat/${encodeURIComponent(JSON.stringify(userDetails))}`}>
-        Send Message
-      </Link>
-      <Link to={"/chat/chatroom"}>
-        Enter chatroom
-      </Link>
     </div>
   );
 }

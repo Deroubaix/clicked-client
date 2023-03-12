@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
+import { AuthContext } from '../context/auth.context'
+
 
 function EditProfile() {
     const [image, setImage] = useState("")
     const [description, setDescription,] = useState("")
+
 
     const handleImage = (e) => setImage(e.target.value)
     const handleDescription = (e) => setDescription(e.target.value)
@@ -26,21 +29,34 @@ function EditProfile() {
         getProfile()
     }, [id])
 
-    const deleteProject = async () => {
+/*     const deleteProfile = async () => {
         try {
-            await axios.delete(`${import.meta.env.VITE_API_URL}/api/projects/${id}`)
-            navigate('/projects')
+            await axios.delete(`${import.meta.env.VITE_API_URL}/api/profile/${id}`)
+            navigate('/home')
         } catch (error) {
             console.log(error)
         }
-    }
+    } */
+
+    const deleteProfile = async () => {
+        const confirmDelete = window.confirm("Are you sure you want to delete your profile?");
+        if (confirmDelete) {
+            try {
+                await axios.delete(`${import.meta.env.VITE_API_URL}/api/profile/${id}`);
+                localStorage.removeItem('authToken')
+                navigate('/');
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const body = {image, description}
         try {
-            await axios.put(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, body)
-            navigate(`/projects/${id}`)
+            await axios.put(`${import.meta.env.VITE_API_URL}/api/profile/${id}`, body)
+            navigate(`/profile`)
         } catch (error) {
             console.log(error)
         }
@@ -56,7 +72,7 @@ function EditProfile() {
             <form onSubmit={handleSubmit}>
                 
                 <label>Image:
-                <input type='file' name='poster' class='form-control-file' />
+                <input type='file' name='poster' class='form-control-file' onChange={handleImage}/>
                </label>
 
                 <label for="description" class="form-label">Bio</label>
@@ -71,7 +87,7 @@ function EditProfile() {
                 <button type='submit'>Edit Profile</button>
             </form>
 
-            <button onClick={deleteProject}>Delete</button>
+            <button onClick={deleteProfile}>Delete</button>
         </section>
     )
 }

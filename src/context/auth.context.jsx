@@ -45,12 +45,17 @@ function AuthWrapper(props) {
         authenticateUser()
     }
 
+    const deleteProfile = () => {
+        localStorage.removeItem("authToken")
+        authenticateUser()
+    }
+
     useEffect(()=> {
        authenticateUser()
     },[])
 
     return (
-        <AuthContext.Provider value={{loggedIn, user, loading, authenticateUser, logout}}>
+        <AuthContext.Provider value={{loggedIn, user, loading, authenticateUser, logout, deleteProfile}}>
             {props.children}
         </AuthContext.Provider>
     )

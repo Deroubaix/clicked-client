@@ -38,20 +38,23 @@ function Profile() {
 
           <p>{updatedUser.description}</p>
           {updatedUser && <Link to={`/profile/edit/${updatedUser._id}`}>Edit project</Link>} 
-          <p>Color: {updatedUser.questionnaire[0]}</p>
-          <p>You like to: {updatedUser.questionnaire[1]}</p>
-          <p>Favoutite thing: {updatedUser.questionnaire[2]}</p>
-          <p>What is what: {updatedUser.questionnaire[3]}</p>
+
+          {updatedUser.questionnaire && updatedUser.questionnaire.length > 0 ? (
+            <>
+              <p>Color: {updatedUser.questionnaire[0]}</p>
+              <p>You like to: {updatedUser.questionnaire[1]}</p>
+              <p>Favoutite thing: {updatedUser.questionnaire[2]}</p>
+              <p>What is what: {updatedUser.questionnaire[3]}</p>
+              <Link to="/profile/questionnaire">Redo Questionnaire</Link>
+              <Link to="/clicks"> Clicks and chicks </Link>
+            </>
+          ) : (
+            <Link to="/profile/questionnaire">Start Questionnaire</Link>
+          )}
         </>
       )}
 
-      <Link to="/clicks"> Clicks and chicks </Link>
-
-      {updatedUser && updatedUser.questionnaire.length ? (
-        <Link to="/profile/questionnaire">Redo Questionnaire</Link>
-      ) : (
-        <Link to="/profile/questionnaire">Start Questionnaire</Link>
-      )}
+      {/* {updatedUser && <Link to="/clicks"> Clicks and chicks </Link>} */}
     </div>
   );
 }
