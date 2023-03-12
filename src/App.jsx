@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
 import Private from "./components/Private";
 import Questionnaire from "./pages/Questionnaire";
 import AllClicks from "./pages/AllClicks";
@@ -32,6 +33,8 @@ function App() {
             </Private>
           }
         />
+
+        <Route path="/profile/edit/:id" element={<EditProfile />} /> 
         <Route path="/profile/questionnaire" element={<Questionnaire />} />
       </Routes>
     </div>

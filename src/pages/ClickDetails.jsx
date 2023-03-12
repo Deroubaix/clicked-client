@@ -30,7 +30,7 @@ function ClickDetails() {
   return (
     <div>
       <h1>User Profile</h1>
-      <h3>Hi, {userDetails?.name}</h3>{" "}
+      <h3>{userDetails?.name}</h3>{" "}
       {/* because we can never trust the backend and be sure that the data is there  */}
       {userDetails.length && (
         <>
