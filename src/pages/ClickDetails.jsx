@@ -43,6 +43,9 @@ function ClickDetails() {
       <Link to={`/chat/${encodeURIComponent(JSON.stringify(userDetails))}`}>
         Send Message
       </Link>
+      <Link to={"/chat/chatroom"}>
+        Enter chatroom
+      </Link>
     </div>
   );
 }

@@ -1,5 +1,7 @@
-import "./App.css";
+import "./App.css";  
+
 import { Routes, Route } from "react-router-dom"; // <== IMPORT
+
 import Navbar from "./components/Navbar"; // <== IMPORT
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
@@ -11,6 +13,12 @@ import Questionnaire from "./pages/Questionnaire";
 import AllClicks from "./pages/AllClicks";
 import ClickDetails from "./pages/ClickDetails";
 import Chat from "./pages/Chat";
+import ChatRoom from "./pages/ChatRoom";
+
+// CHAT 
+
+ 
+
 
 function App() {
   return (
@@ -24,7 +32,7 @@ function App() {
         <Route path="/clicks" element={<AllClicks />} />
         <Route path="/clicks/:id" element={<ClickDetails />} />
         <Route path="/chat/:data" element={<Chat />} />
-
+        <Route path="/chat/chatroom" element={<ChatRoom/>}/>
         <Route
           path="/profile"
           element={
