@@ -5,6 +5,10 @@ import './index.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { AuthWrapper } from './context/auth.context'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '/styles/home.css'
+import '/styles/signup.css'
+import '/styles/login.css'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

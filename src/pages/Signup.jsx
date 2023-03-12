@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 
+
 function Signup() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -26,9 +27,9 @@ function Signup() {
   }
 
   return (
-    <section>
+    <section >
       <h1>Signup</h1>
-      <form onSubmit={handleSubmit}>
+      <form className='signup' onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" value={name} onChange={handleName} />
 

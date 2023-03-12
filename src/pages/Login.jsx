@@ -37,7 +37,7 @@ function Login() {
   return (
     <section>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="login" onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
           type="email"
