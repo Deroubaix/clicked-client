@@ -32,7 +32,7 @@ function App() {
         <Route path="/clicks" element={<AllClicks />} />
         <Route path="/clicks/:id" element={<ClickDetails />} />
         <Route path="/chat/:data" element={<Chat />} />
-        <Route path="/chat/chatroom" element={<ChatRoom/>}/>
+        <Route path="/chat/chatroom/:id" element={<ChatRoom/>}/>
         <Route
           path="/profile"
           element={
