@@ -72,18 +72,19 @@ function EditProfile() {
             <form onSubmit={handleSubmit}>
                 
                 <label>Image:
-                <input type='file' name='poster' class='form-control-file' onChange={handleImage}/>
+                <input type='file' name='poster'  onChange={handleImage}/>
                </label>
+               <input type='text' value={image}  name='currentImage' hidden />
 
                 <label for="description" class="form-label">Bio</label>
               <textarea
-                class="form-control"
+            
                 name="description"
                 id="description"
                 rows="5"
-                placeholder="Say something about yourself"
+                placeholder="Say something about yourself" 
                 onChange={handleDescription}
-              ></textarea>
+              >{description}</textarea>
                 <button type='submit'>Edit Profile</button>
             </form>
 
