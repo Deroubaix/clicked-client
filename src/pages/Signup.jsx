@@ -27,8 +27,11 @@ function Signup() {
   }
 
   return (
-    <section >
+    <section className="login-signup-section">
+    <header className="login-signup-header">  
       <h1>Signup</h1>
+      <p>Find your clicks</p>
+      </header>
       <form className='signup' onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" value={name} onChange={handleName} />
@@ -39,7 +42,7 @@ function Signup() {
         <label htmlFor="password">Password</label>
         <input type="password" name="password" id="password" value={password} onChange={handlePassword} />
 
-        <button type="submit">Create account</button>
+        <button className="login-signup-button" type="submit">Create account</button>
         
       </form>
       <p>Already have an account?</p>

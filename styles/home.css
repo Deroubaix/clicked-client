@@ -41,7 +41,7 @@ body {
     display: flex;
     flex-direction: column;
   }
-  
+  /*
   .button {
     position: relative;
     overflow: hidden;
@@ -51,7 +51,7 @@ body {
     border: 1px solid rgb(255, 255, 255);
     border-radius: 30px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #30287A ;
     white-space: nowrap;
     animation: rainbow-btn-home 5s linear infinite;
     justify-content: center;
@@ -80,11 +80,11 @@ body {
   
   
   .button:hover {
-    color: rgb(0, 0, 0);
-    background: #30287A ;
+    color: white ;
+    background: #30287A  ;
     transition: all 0.3s ease 0s;
     color: white;
-  } 
+  }  */
   
     
   

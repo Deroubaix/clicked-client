@@ -35,11 +35,14 @@ function Login() {
   };
 
   return (
-    <section>
+    <section className="login-signup-section">
+      <header className="login-signup-header">
       <h1>Login</h1>
+      <p>log in to connect </p>
+      </header>
       <form className="login" onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
-        <input
+        <input 
           type="email"
           name="email"
           id="email"
@@ -48,7 +51,7 @@ function Login() {
         ></input>
 
         <label htmlFor="password">Password</label>
-        <input
+        <input id="form-input"
           type="password"
           name="password"
           id="password"
@@ -56,10 +59,10 @@ function Login() {
           onChange={handlePassword}
         ></input>
 
-        <button type="submit">Login</button>
+        <button className="login-signup-button" type="submit">Login</button>
       </form>
       <p>Dont have an account?</p>
-      <Link to="/signup">Signup</Link>
+      <Link className="sign-up" to="/signup">Signup</Link>
     </section>
   );
 }
