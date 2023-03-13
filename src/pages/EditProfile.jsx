@@ -1,22 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
-import { AuthContext } from '../context/auth.context';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
+import service from "../services/service";
 
 function EditProfile() {
-  const [image, setImage] = useState('');
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
-  const handleImage = (e) => setImage(e.target.files[0]);
   const handleDescription = (e) => setDescription(e.target.value);
   const navigate = useNavigate();
+
+  const handleFileUpload = async (e) => {
+    const uploadData = new FormData();
+    uploadData.append("imageUrl", e.target.files[0]);
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/upload`,
+        uploadData
+      );
+      setImageUrl(response.data.fileUrl);
+    } catch (err) {
+      console.log("Error while uploading the file: ", err);
+    }
+  };
 
   const { id } = useParams();
 
   const getProfile = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/profile/${id}`);
-      setImage(response.data.image);
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/profile/${id}`
+      );
+      setImageUrl(response.data.image);
       setDescription(response.data.description);
     } catch (error) {
       console.log(error);
@@ -28,12 +44,14 @@ function EditProfile() {
   }, [id]);
 
   const deleteProfile = async () => {
-    const confirmDelete = window.confirm('Are you sure you want to delete your profile?');
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete your profile?"
+    );
     if (confirmDelete) {
       try {
         await axios.delete(`${import.meta.env.VITE_API_URL}/api/profile/${id}`);
-        localStorage.removeItem('authToken');
-        navigate('/');
+        localStorage.removeItem("authToken");
+        navigate("/");
       } catch (error) {
         console.log(error);
       }
@@ -42,11 +60,15 @@ function EditProfile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('image', image);
-    formData.append('description', description);
     try {
-      await axios.put(`${import.meta.env.VITE_API_URL}/api/profile/${id}`, formData);
+      const x = await axios.put(
+        `${import.meta.env.VITE_API_URL}/api/profile/${id}`,
+        {
+          imageUrl,
+          description,
+        }
+      );
+      console.log(x);
       navigate(`/profile`);
     } catch (error) {
       console.log(error);
@@ -60,7 +82,11 @@ function EditProfile() {
       <form onSubmit={handleSubmit}>
         <label>
           Image:
-          <input type="file" name="poster" onChange={handleImage} encType="multipart/form-data" />
+          <input
+            type="file"
+            name="imageUrl"
+            onChange={(e) => handleFileUpload(e)}
+          />
         </label>
         {/* <input type='text' value={image}  name='currentImage' hidden /> */}
 
@@ -83,4 +109,4 @@ function EditProfile() {
   );
 }
 
-export default EditProfile
+export default EditProfile;
