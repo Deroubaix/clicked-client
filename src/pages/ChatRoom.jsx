@@ -25,6 +25,18 @@ function ChatRoom({userDetails}) {
     }
   };
 
+  const deleteMessage = async () => {
+
+      try {
+        await axios.delete(`${import.meta.env.VITE_API_URL}/api/message/${id}`);
+   
+        /* navigate("/"); */
+      } catch (error) {
+        console.log(error);
+
+    }
+  };
+
 
   const handleInput = (event) => {
     setInputValue(event.target.value);
