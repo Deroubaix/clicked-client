@@ -5,6 +5,7 @@ import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 
+
 function Navigation() {
     const {loggedIn, user, logout}= useContext(AuthContext)
 
@@ -13,10 +14,10 @@ function Navigation() {
     return (
 
         
-        <Navbar id='navigate' expand="md" style={{ justifyContent: "flex-start", position: "sticky", top: "0", backgroundColor: "white" }}>
+        <Navbar id='navigate' expand="md" style={{ justifyContent: "flex-start", top: "0", backgroundColor: "white" }}>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto" style={{ display: "flex", width: "100%" }}>
+                <Nav className="mr-auto" style={{ /* display: "flex", */ width: "100%" }}>
 
                 <NavLink className="nav-link" to="/" >Home</NavLink>
   
@@ -27,7 +28,7 @@ function Navigation() {
            
             <NavLink className="nav-link" to="/profile">Profile</NavLink>
 
-            <button onClick={logout}>Logout</button>
+            <Link className="nav-link" onClick={logout}>Logout</Link>
             </>
             ) :  (
                 <>

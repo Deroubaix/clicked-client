@@ -1,28 +1,45 @@
-body {
+ body {
     font-family: 'Recoleta';
 }
 
-button {
-/*         display: inline-block;
- */        color: #30287A ;
-      
-        width: 280px;
-        height: 50px;
-      
-        padding: 0 20px;
-        background: #fff;
-        border-radius: 5px;
-        
-        outline: none;
-        border: none;
-      
-        cursor: pointer;
-        text-align: center;
-        transition: all 0.8s linear;
-        
-        margin: 7% auto;
-        letter-spacing: 0.05em;
+/*  button {
+    color: #30287A ;
+  
+    width: 280px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
     
-} 
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.8s linear;
+    
+    letter-spacing: 0.05em;
+  
+  }   */
 
-
+.nav-link {
+    color: #30287A ;
+  
+    width: 280px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.8s linear;
+    
+    letter-spacing: 0.05em;
+  
+  }  

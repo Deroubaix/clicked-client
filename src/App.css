@@ -31,4 +31,40 @@
 }
  */
 
- 
+ body {
+  background: url('https://i.ytimg.com/vi/YSHDBB6id4A/maxresdefault.jpg');
+  background-size: cover;
+  /* padding: 5px;
+  margin: 0px auto; */
+  background-repeat: no-repeat;
+  font-family: 'Recoleta';
+/*   display: flex; */
+  justify-content: center;
+  align-items: center;
+/*     height: 100vh; */ /* Set the height of the body to be 100% of the viewport height */
+/*     margin: 0;
+*/  }
+
+
+/* 
+
+button {
+  color: #30287A ;
+
+  width: 280px;
+  height: 50px;
+
+  padding: 0 20px;
+  background: #fff;
+  border-radius: 5px;
+  
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.8s linear;
+  
+  letter-spacing: 0.05em;
+
+}  */

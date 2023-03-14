@@ -90,8 +90,8 @@ input:focus {
     text-align: center;
     transition: all 0.2s linear;
     
-    margin: 7% auto;
-    letter-spacing: 0.05em;
+/*     margin: 7% auto;
+ */    letter-spacing: 0.05em;
 }
 /* Submits */
 /* .submits {

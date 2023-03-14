@@ -12,19 +12,16 @@
     transform: translate(-50%, -50%);
 } */
 
-body {
+/* body {
     background: url('images/Desktop.png');
     background-size: cover;
-    /* padding: 5px;
-    margin: 0px auto; */
     background-repeat: no-repeat;
     font-family: 'Recoleta';
-  /*   display: flex; */
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 /*     height: 100vh; */ /* Set the height of the body to be 100% of the viewport height */
 /*     margin: 0;
- */  }
+ */  
   
   .home {
     font-family: 'Recoleta';
@@ -35,7 +32,9 @@ body {
   }
 
 
-
+.titles {
+    height: 1500px;
+}
 
   .button {
     display: flex;
