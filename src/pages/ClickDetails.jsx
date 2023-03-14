@@ -2,9 +2,11 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
+import ChatBox from "../components/ChatBox/ChatBox";
 
 function ClickDetails() {
   const [userDetails, setUserDetails] = useState([]);
+  const [showChat, setShowChat] = useState(false);
 
   const { id } = useParams();
 
@@ -18,6 +20,14 @@ function ClickDetails() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const toggleChat = () => {
+    setShowChat((prevShowChat) => !prevShowChat);
+  };
+
+  const enterChatRoom = () => {
+    setShowChat((prevShowChat) => !prevShowChat);
   };
 
   useEffect(() => {
@@ -46,10 +56,8 @@ function ClickDetails() {
               <p>What is what: {userDetails.questionnaire[3]}</p>
             </>
           )}
-          <Link to={`/chat/${encodeURIComponent(JSON.stringify(userDetails))}`}>
-            Send Message
-          </Link>
-          <Link to={`/chat/chatroom/${id}`}>Enter chatroom</Link>
+          <button onClick={enterChatRoom}>{showChat ? "Close Message" : "Send Message"}</button>
+          {showChat && <ChatBox userDetails={userDetails} />}
         </>
       )}
     </div>

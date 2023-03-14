@@ -132,7 +132,7 @@ function AllClicks() {
           <div key={user._id}>
             <h2>{user.name}</h2>
             <p>{user.description}</p>
-            <img src={user.image} alt={user.name} />
+            <img src={user.imageUrl} alt={user.name} />
             <p>{user.questionnaire}</p>
             <Link to={`/clicks/${user._id}`}> see details </Link>
           </div>
