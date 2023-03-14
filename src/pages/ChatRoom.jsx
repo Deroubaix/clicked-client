@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { AuthContext } from '../context/auth.context';
 import '/styles/chatRoom.css';
 
-function ChatRoom({ userId }) {
+function ChatRoom({userDetails}) {
   const [inputValue, setInputValue] = useState('');
   const [chatId, setChatId] = useState("")
   const [chatMsg, setChatMsg] = useState()
@@ -15,7 +15,7 @@ function ChatRoom({ userId }) {
   const createChatRoom = async () => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/chat/${user._id}/${id}`
+        `${import.meta.env.VITE_API_URL}/api/chat/${user._id}/${userDetails._id}`
       );
       console.log(response.data);
       setChatId(response.data[0]._id)

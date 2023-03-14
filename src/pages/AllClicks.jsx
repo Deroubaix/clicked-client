@@ -125,16 +125,18 @@ function AllClicks() {
   }, []);
 
   return (
-    <div>
-      <h1>Clicks</h1>
+    <div className="d-flex flex-wrap justify-content-center">
       {allClicks.length &&
         allClicks.map((user) => (
-          <div key={user._id}>
-            <h2>{user.name}</h2>
-            <p>{user.description}</p>
-            <img src={user.imageUrl} alt={user.name} />
-            <p>{user.questionnaire}</p>
-            <Link to={`/clicks/${user._id}`}> see details </Link>
+          <div className="card m-2" key={user._id} style={{ width: "18rem" }}>
+            <img className="card-img-top rounded-circle" src={user.imageUrl} alt={user.name} />
+            <div className="card-body">
+              <h5 className="card-title">{user.name}</h5>
+              <p className="card-text">{user.description}</p>
+              <Link to={`/clicks/${user._id}`} className="btn btn-outline-primary">
+                See details
+              </Link>
+            </div>
           </div>
         ))}
     </div>
@@ -142,3 +144,39 @@ function AllClicks() {
 }
 
 export default AllClicks;
+
+
+/* import React from 'react';
+import './Basic.css';
+
+function Basic() {
+  return (
+    <div className="container">
+      <div className="card">
+        <div className="card-body">
+          <div className="row">
+            <div className="col-md-4">
+              <img
+                className="card-img-top rounded-circle"
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                alt="Profile Avatar"
+              />
+            </div>
+            <div className="col-md-8">
+              <h5 className="card-title">{user.name}</h5>
+              <p className="card-text">{user.description}</p>
+
+
+              <div className="d-flex pt-1">
+                <button className="btn btn-outline-primary me-1 flex-grow-1">Send message</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Basic; */
