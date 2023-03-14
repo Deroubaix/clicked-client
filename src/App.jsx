@@ -16,19 +16,24 @@ import ClickDetails from "./pages/ClickDetails";
 
 import ChatRoom from "./pages/ChatRoom";
 
-// CHAT
+import { useLocation } from 'react-router-dom';
 
 function App() {
+  const location = useLocation();
+
+  // Determine whether to show the Navbar based on the current path
+  const showNavbar = location.pathname !== '/';
+
   return (
     <div className="App">
-      <Navbar></Navbar>
+      {showNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/clicks" element={<AllClicks />} />
         <Route path="/clicks/:id" element={<ClickDetails />} />
-   
+
         <Route path="/chat/chatroom/:id" element={<ChatRoom />} />
         <Route
           path="/profile"
@@ -45,4 +50,6 @@ function App() {
     </div>
   );
 }
+
 export default App;
+

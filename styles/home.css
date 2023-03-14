@@ -30,76 +30,85 @@
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    color: #320077;
   }
 
 
 .titles {
     height: 1000px;
+    text-align: center;
+    
 }
 
+.main-title-home {
+    font-size: 100px;
+    font-weight: 900;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.subtitle-home {
+    font-size: 30px;
+    margin-top: -30px;
+    padding-top: 2px;
+} 
+
+
+
+
+ .home-page-buttons {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+margin-top: 5%;
+ }
+
+
   .button {
-    display: flex;
-    flex-direction: column;
-  }
+    display: inline-block;
+    color: #252537;
+  
+    width: 240px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 20px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    letter-spacing: 0.05em;
+    margin: 1vh;
+
+}
+
+.button-text {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
 
 
 .information-home{
-    height: 400px;
+    height: 300px;
+    text-align: center;
+    padding-bottom: 20%;
   }
 
+.image-friends-home {
+    height: auto;
+    max-width: 70%;
+    margin-bottom: 100px;
+}
 
-
-
-
-
-
-  /*
-  .button {
-    position: relative;
-    overflow: hidden;
-    padding: 12px 25px;
-    margin: 0px 3px 6px;
-    text-align: center;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 30px;
-    text-decoration: none;
-    color: #30287A ;
-    white-space: nowrap;
-    animation: rainbow-btn-home 5s linear infinite;
-    justify-content: center;
-  
-  } 
-  
-  .button::before {
-    position: absolute;
-    content: "";
-    background: rgb(68, 79, 167);
-    transition-duration: 0.3s;
-    z-index: -1;
-    inset: 0px auto auto 0px;
-    width: 0px;
-    height: 100%;
-    opacity: 1;
-    border: 1px solid rgb(255, 255, 255);
-  } 
-  
-  
-  .button:hover::before {
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-  } 
-  
-  
-  .button:hover {
-    color: white ;
-    background: #30287A  ;
-    transition: all 0.3s ease 0s;
-    color: white;
-  }  */
-  
-    
-  
-  
-  
-  
+@media (max-width: 768px) {
+  .image-friends-home {
+    height: auto;
+    max-width: 100%;
+  }
+}
