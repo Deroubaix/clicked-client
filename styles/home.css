@@ -29,11 +29,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
   }
 
 
 .titles {
-    height: 1500px;
+    height: 1000px;
 }
 
   .button {
@@ -42,10 +43,8 @@
   }
 
 
-
-
 .information-home{
-    height: 600px;
+    height: 400px;
   }
 
 

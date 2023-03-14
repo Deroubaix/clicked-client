@@ -38,13 +38,14 @@ function Login() {
 
   return (
     <section className="login-signup-section">
+      <div className="login-signup-box">
       <header className="login-signup-header">
       <h1>Login</h1>
       <p>log in to connect </p>
       </header>
       <form className="login" onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
-        <input 
+        <input className="form-input"
           type="email"
           name="email"
           id="email"
@@ -61,6 +62,7 @@ function Login() {
       </form>
       <p>Dont have an account?</p>
       <Link className="sign-up" to="/signup">Signup</Link>
+      </div>
     </section>
   );
 }

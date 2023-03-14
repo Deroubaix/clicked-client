@@ -10,7 +10,7 @@
     border-radius: 5px;
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
-    padding: 2%;
+    padding: 2% 5%;
     background-image: linear-gradient(-225deg, rgba(245, 189, 127, 0.5) 50%, rgb(203, 171, 247, 0.5) 50%);
 }
 
@@ -26,6 +26,12 @@
   
       margin: 0 auto;
 }
+
+
+.login-signup-box{
+    margin: 20px;
+}
+
 
 /* the header form form */
 .login-signup-header {
@@ -45,11 +51,12 @@
 
 /* inputs form  */
 .form-input {
-    width: 240px;
+    width: 280px;
     height: 50px;
   
     margin-top: 2%;
-    padding: 15px;
+    padding: 20px;
+    margin-bottom: 10px;
     
     font-size: 16px;
     font-family: 'Abel', sans-serif;
@@ -58,9 +65,12 @@
     outline: none;
     border: none;
   
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 5px;
     transition: 0.2s linear;
+
+    align-items: center;
     
+
 }
 input[id="txt-input"] {width: 250px;}
 /* focus  */
@@ -90,16 +100,8 @@ input:focus {
     text-align: center;
     transition: all 0.2s linear;
     
-/*     margin: 7% auto;
- */    letter-spacing: 0.05em;
+    letter-spacing: 0.05em;
 }
-/* Submits */
-/* .submits {
-    width: 48%;
-    display: inline-block;
-    float: left;
-    margin-left: 2%;
-} */
 
 /*     Sign Up button  */
 .sign-up {background: #B8F2E6;}

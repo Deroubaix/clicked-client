@@ -14,10 +14,10 @@ function Navigation() {
     return (
 
         
-        <Navbar id='navigate' expand="md" style={{ justifyContent: "flex-start", top: "0", backgroundColor: "white" }}>
+        <Navbar id='navigate' expand="md" style={{ justifyContent: "center", top: "0", backgroundColor: "white" }}>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto" style={{ /* display: "flex", */ width: "100%" }}>
+                <Nav className="mr-auto" style={{ display: "flex",  width: "100%" }}>
 
                 <NavLink className="nav-link" to="/" >Home</NavLink>
   

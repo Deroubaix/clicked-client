@@ -32,7 +32,7 @@
  */
 
  body {
-  background: url('https://i.ytimg.com/vi/YSHDBB6id4A/maxresdefault.jpg');
+  background: url('images/Desktop.png');
   background-size: cover;
   /* padding: 5px;
   margin: 0px auto; */
@@ -41,9 +41,7 @@
 /*   display: flex; */
   justify-content: center;
   align-items: center;
-/*     height: 100vh; */ /* Set the height of the body to be 100% of the viewport height */
-/*     margin: 0;
-*/  }
+ }
 
 
 /* 

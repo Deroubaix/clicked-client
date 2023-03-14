@@ -30,25 +30,27 @@ function Signup() {
 
   return (
     <section className="login-signup-section">
+    <div className="login-signup-box">
     <header className="login-signup-header">  
       <h1>Signup</h1>
       <p>Find your clicks</p>
       </header>
       <form className='signup' onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" value={name} onChange={handleName} />
+        <input className="form-input" type="text" name="name" id="name" value={name} onChange={handleName} />
 
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" value={email} onChange={handleEmail} />
+        <input className="form-input" type="email" name="email" id="email" value={email} onChange={handleEmail} />
 
         <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" value={password} onChange={handlePassword} />
+        <input className="form-input" type="password" name="password" id="password" value={password} onChange={handlePassword} />
 
         <button className="login-signup-button" type="submit">Create account</button>
         
       </form>
       <p>Already have an account?</p>
       <Link to="/login">Login</Link>
+      </div>
     </section>
   )
 }
