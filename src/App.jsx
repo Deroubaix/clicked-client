@@ -1,4 +1,4 @@
-import "./App.css";  
+import "./App.css";
 
 import { Routes, Route } from "react-router-dom"; // <== IMPORT
 
@@ -15,10 +15,7 @@ import ClickDetails from "./pages/ClickDetails";
 import Chat from "./pages/Chat";
 import ChatRoom from "./pages/ChatRoom";
 
-// CHAT 
-
- 
-
+// CHAT
 
 function App() {
   return (
@@ -32,7 +29,7 @@ function App() {
         <Route path="/clicks" element={<AllClicks />} />
         <Route path="/clicks/:id" element={<ClickDetails />} />
         <Route path="/chat/:data" element={<Chat />} />
-        <Route path="/chat/chatroom/:id" element={<ChatRoom/>}/>
+        <Route path="/chat/chatroom/:id" element={<ChatRoom />} />
         <Route
           path="/profile"
           element={
@@ -42,7 +39,7 @@ function App() {
           }
         />
 
-        <Route path="/profile/edit/:id" element={<EditProfile />} /> 
+        <Route path="/profile/edit/:id" element={<EditProfile />} />
         <Route path="/profile/questionnaire" element={<Questionnaire />} />
       </Routes>
     </div>

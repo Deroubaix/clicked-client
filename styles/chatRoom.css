@@ -38,14 +38,14 @@
     margin-bottom: 5px;
   }
   
-  form {
+  .message-form {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
   }
   
-  input[type="text"] {
+  .message-input [type="text"] {
     flex: 1;
     padding: 10px;
     margin-top: 10px;

@@ -51,14 +51,10 @@ function Login() {
         ></input>
 
         <label htmlFor="password">Password</label>
-        <input id="form-input"
-          type="password"
-          name="password"
-          id="password"
-          value={password}
-          onChange={handlePassword}
+        <input className="form-input"
+     type="password" name="password" id="password" value={password} onChange={handlePassword}
         ></input>
-
+         
         <button className="login-signup-button" type="submit">Login</button>
       </form>
       <p>Dont have an account?</p>

@@ -56,8 +56,8 @@ function ChatRoom({ userId }) {
             </p>
         ))}
       </div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={inputValue} onChange={handleInput} />
+      <form className='message-form' onSubmit={handleSubmit}>
+        <input className='message-input' type="text" value={inputValue} onChange={handleInput} />
         <button className="chat-btn" type="submit">Send</button>
       </form>
     </div>
