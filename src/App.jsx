@@ -13,7 +13,7 @@ import Private from "./components/Private";
 import Questionnaire from "./pages/Questionnaire";
 import AllClicks from "./pages/AllClicks";
 import ClickDetails from "./pages/ClickDetails";
-import Chat from "./pages/Chat";
+
 import ChatRoom from "./pages/ChatRoom";
 
 // CHAT
@@ -28,7 +28,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/clicks" element={<AllClicks />} />
         <Route path="/clicks/:id" element={<ClickDetails />} />
-        <Route path="/chat/:data" element={<Chat />} />
+   
         <Route path="/chat/chatroom/:id" element={<ChatRoom />} />
         <Route
           path="/profile"
