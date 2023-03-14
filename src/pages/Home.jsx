@@ -9,14 +9,24 @@ function Home() {
     <div className='home'>
       <div className='titles'>
         <h1> Clicked </h1>
+        <br></br>
         <h4>Find your clicks </h4>
+        <br></br>
         <button className='button'>
           <Link to='/signup' className='button-text'>Sign up</Link>
         </button>
         <button className='button'>
           <Link to='/login' className='button-text'>Login</Link>
         </button>
-    </div>
+     </div>
+     <br></br>
+     <br></br>
+
+    <section className='information-home'>
+      <h1> fancy title </h1>
+      <p> jsmdfljkmdlsqfkjmqdlskfjfsdml</p>
+    </section>
+
     </div>
   
   )

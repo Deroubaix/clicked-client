@@ -3,10 +3,6 @@
     flex-direction: column;
 }
 
-
-
-
-
 .login-signup-section {
     width: 450px;
     min-height: 500px;
@@ -15,8 +11,9 @@
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
-    background-image: linear-gradient(-225deg,  #F5BD7F 50%, #cbabf7 50%);
+    background-image: linear-gradient(-225deg, rgba(245, 189, 127, 0.5) 50%, rgb(203, 171, 247, 0.5) 50%);
 }
+
 .login-signup-section .con {
     display: -webkit-flex;
     display: flex;
@@ -46,37 +43,6 @@
 
 
 
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
-
-
-/* .input-item {
-    background: #fff;
-    color: #333;
-    padding: 14.5px 0px 15px 9px;
-    border-radius: 5px 0px 0px 5px;
-}
- */
-
-
-/* Show/hide password Font Icon */
-/* #eye {
-    background: #fff;
-    color: #333;
-  
-    margin: 5.9px 0 0 0;
-    margin-left: -20px;
-    padding: 15px 9px 19px 0px;
-    border-radius: 0px 5px 5px 0px;
-  
-    float: right;
-    position: relative;
-    right: 1%;
-    top: -.2%;
-    z-index: 5;
-    
-    cursor: pointer;
-} */
 /* inputs form  */
 .form-input {
     width: 240px;
@@ -103,8 +69,6 @@ input:focus {
     border-radius: 5px;
 }
 
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
 
 /* input[type="text"] {min-width: 250px;} */
 /* buttons  */

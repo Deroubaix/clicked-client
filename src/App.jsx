@@ -20,8 +20,7 @@ import ChatRoom from "./pages/ChatRoom";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />

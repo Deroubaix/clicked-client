@@ -15,16 +15,16 @@
 body {
     background: url('images/Desktop.png');
     background-size: cover;
-    padding: 5px;
-    margin: 0px auto;
+    /* padding: 5px;
+    margin: 0px auto; */
     background-repeat: no-repeat;
     font-family: 'Recoleta';
-    display: flex;
+  /*   display: flex; */
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Set the height of the body to be 100% of the viewport height */
-    margin: 0;
-  }
+/*     height: 100vh; */ /* Set the height of the body to be 100% of the viewport height */
+/*     margin: 0;
+ */  }
   
   .home {
     font-family: 'Recoleta';
@@ -41,6 +41,20 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+
+
+
+.information-home{
+    height: 600px;
+  }
+
+
+
+
+
+
+
   /*
   .button {
     position: relative;

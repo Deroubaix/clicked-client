@@ -2,10 +2,9 @@ body {
     font-family: 'Recoleta';
 }
 
-
 button {
-        display: inline-block;
-        color: #30287A ;
+/*         display: inline-block;
+ */        color: #30287A ;
       
         width: 280px;
         height: 50px;
@@ -25,3 +24,5 @@ button {
         letter-spacing: 0.05em;
     
 } 
+
+
