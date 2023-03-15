@@ -1,4 +1,4 @@
-import '/styles/allPages.css'
+import "/styles/allPages.css";
 import "./App.css";
 
 import { Routes, Route } from "react-router-dom"; // <== IMPORT
@@ -13,16 +13,17 @@ import Private from "./components/Private";
 import Questionnaire from "./pages/Questionnaire";
 import AllClicks from "./pages/AllClicks";
 import ClickDetails from "./pages/ClickDetails";
+import YourChats from "./pages/YourChats";
 
 import ChatRoom from "./pages/ChatRoom";
 
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 function App() {
   const location = useLocation();
 
   // Determine whether to show the Navbar based on the current path
-  const showNavbar = location.pathname !== '/';
+  const showNavbar = location.pathname !== "/";
 
   return (
     <div className="App">
@@ -33,7 +34,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/clicks" element={<AllClicks />} />
         <Route path="/clicks/:id" element={<ClickDetails />} />
-
+        <Route path="/yourchats" element={<YourChats />} />
         <Route path="/chat/chatroom/:id" element={<ChatRoom />} />
         <Route
           path="/profile"
@@ -52,4 +53,3 @@ function App() {
 }
 
 export default App;
-
