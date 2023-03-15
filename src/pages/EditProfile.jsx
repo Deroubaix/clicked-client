@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import service from "../services/service";
+import '/styles/editprofile.css'
 
 function EditProfile() {
   const [description, setDescription] = useState("");
@@ -76,24 +77,14 @@ function EditProfile() {
   };
 
   return (
-    <section>
-      <h1>Edit Profile</h1>
+    <section className="edit-profile-page">
+      <h1 className="profile-name-header">Edit Profile</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Image:
-          <input
-            type="file"
-            name="imageUrl"
-            onChange={(e) => handleFileUpload(e)}
-          />
+    {/* <div className="description"> */}
+      <label htmlFor="description" className="form-label">
+          Bio:
         </label>
-        {/* <input type='text' value={image}  name='currentImage' hidden /> */}
-
-        <label htmlFor="description" className="form-label">
-          Bio
-        </label>
-        <textarea
+        <textarea className="description-box"
           name="description"
           id="description"
           rows="5"
@@ -101,10 +92,28 @@ function EditProfile() {
           value={description}
           onChange={handleDescription}
         />
-        <button type="submit">Edit Profile</button>
+{/* </div> */}
+      <form onSubmit={handleSubmit}>
+        <div className="upload-image">
+        <label>
+          Image: 
+          {/* <input class
+            type="file"
+            name="imageUrl"
+            onChange={(e) => handleFileUpload(e)}
+          /> */}
+          <input class="file-upload" type="file" name="imageUrl" onChange={(e) => handleFileUpload(e)} />
+
+        </label>
+        </div>
+        {/* <input type='text' value={image}  name='currentImage' hidden /> */}
+
+
+    
+        <button className="save-btn" type="submit">Save changes</button>
       </form>
 
-      <Link to="/" onClick={deleteProfile}>Delete</Link>
+      <Link to="/" onClick={deleteProfile}>Delete profile</Link>
     </section>
   );
 }
