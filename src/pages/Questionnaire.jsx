@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import QuestionCard from "../components/QuestionCard";
 import { AuthContext } from "../context/auth.context";
+import "/styles/questionnaire.css"
+
 
 const questionData = [
   {
@@ -62,7 +64,7 @@ function Questionnaire() {
 
   return (
     <section>
-      <QuestionCard
+      <QuestionCard 
         data={questionData[currentStep]}
         onAnswerChange={handleAnswerChange}
       />

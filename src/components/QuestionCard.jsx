@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "/styles/questionnaire.css"
+
 
 function QuestionCard(props) {
   let { data, onAnswerChange } = props;
@@ -11,12 +13,12 @@ function QuestionCard(props) {
   };
 
   return (
-    <div>
+    <div className="questionnaire">
       <h3>{data.question}</h3>
       {data.answers.map((answer, index) => {
         return (
-          <label key={index}>
-            <input
+          <label class="answer-btn" key={index}>
+            <input className="answers"
               type="radio"
               name="answer"
               value={answer}
@@ -28,7 +30,7 @@ function QuestionCard(props) {
           </label>
         );
       })}
-      <button
+      <button className="next-btn"
         onClick={() => {
           onAnswerChange(selectedAnswer);
           setSelectedAnswer("");
