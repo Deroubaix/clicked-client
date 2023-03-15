@@ -1,28 +1,4 @@
-/* body{
-    
-    font-weight: bolder;
-    position: relative;
-}
 
-.titles {
-    font-family: 'Recoleta';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
-
-/* body {
-    background: url('images/Desktop.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: 'Recoleta';
-    justify-content: center;
-    align-items: center; */
-/*     height: 100vh; */ /* Set the height of the body to be 100% of the viewport height */
-/*     margin: 0;
- */  
-  
 
   .home {
     font-family: 'Recoleta';
@@ -31,6 +7,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    margin-bottom: 100px;
     color: #320077;
     background-image: url('images/Desktop-illustration.png');
   }
@@ -45,7 +22,7 @@
 .main-title-home {
     font-size: 100px;
     font-weight: 900;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     padding-bottom: 0px;
 }
 .subtitle-home {
@@ -97,9 +74,10 @@ margin-top: 5%;
 
 
 .information-home{
-    height: 300px;
+    height: 100px;
     text-align: center;
     padding-bottom: 20%;
+    margin: 0px 20%;
   }
 
 .image-friends-home {

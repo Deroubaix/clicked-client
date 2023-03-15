@@ -46,8 +46,8 @@ background-image: url('images/Desktop-illustration.png');
 /* Login title form form */
 .login-signup-header h2 {
     font-size: 250%;
-    font-family: 'Playfair Display', serif;
-    color: #3e403f;
+/*     font-family: 'Playfair Display', serif;
+ */    color: #3e403f;
 }
 /*  A welcome message or an explanation of the login form */
 .login-signup-header p {letter-spacing: 0.05em;}
@@ -64,8 +64,8 @@ background-image: url('images/Desktop-illustration.png');
     margin-bottom: 10px;
     
     font-size: 16px;
-    font-family: 'Abel', sans-serif;
-    color: #5E6472;
+/*     font-family: 'Abel', sans-serif;
+ */    color: #5E6472;
   
     outline: none;
     border: none;

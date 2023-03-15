@@ -102,7 +102,7 @@ function EditProfile() {
             name="imageUrl"
             onChange={(e) => handleFileUpload(e)}
           /> */}
-          <input class="file-upload" type="file" name="imageUrl" onChange={(e) => handleFileUpload(e)} />
+          <input className="file-upload" type="file" name="imageUrl" onChange={(e) => handleFileUpload(e)} />
 
         </label>
         </div>
