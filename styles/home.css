@@ -23,6 +23,7 @@
 /*     margin: 0;
  */  
   
+
   .home {
     font-family: 'Recoleta';
     display: flex;
@@ -31,6 +32,7 @@
     align-items: center;
     margin-top: 100px;
     color: #320077;
+    background-image: url('images/Desktop-illustration.png');
   }
 
 

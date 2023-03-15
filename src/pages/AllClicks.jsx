@@ -133,7 +133,7 @@ function AllClicks() {
               className="card-img-top rounded-circle"
               src={user.imageUrl}
               alt={user.name}
-              style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }}/>
+              style={{ maxWidth: "50px", maxHeight: "50px", objectFit: "cover" }}/>
             <div className="card-body">
               <h5 className="card-title">{user.name}</h5>
               <p className="card-text">{user.description}</p>
