@@ -25,11 +25,15 @@ function Profile() {
 
   return (
     <div className="user-profile-log mb-4">
-      <h1 className="profile-name-header">Hi, {updatedUser.name}</h1>
+     
       {updatedUser && (
+         
         <div className="profile-wrapper-log">
+        
           <div className="user-details-log">
+          <h1 className="profile-name-header">Hi, {updatedUser.name}</h1>
             {updatedUser.imageUrl && (
+              
               <div className="profile-image-wrapper-log">
                 <img
                   src={updatedUser.imageUrl}
