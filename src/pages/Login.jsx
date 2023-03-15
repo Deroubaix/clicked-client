@@ -37,6 +37,7 @@ function Login() {
   };
 
   return (
+    <body className="login-page" >
     <section className="login-signup-section">
       <div className="login-signup-box">
       <header className="login-signup-header">
@@ -64,6 +65,7 @@ function Login() {
       <Link className="sign-up" to="/signup">Signup</Link>
       </div>
     </section>
+    </body>
   );
 }
 
