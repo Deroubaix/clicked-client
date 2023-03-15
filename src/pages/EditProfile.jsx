@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import service from "../services/service";
 
@@ -50,8 +50,8 @@ function EditProfile() {
     if (confirmDelete) {
       try {
         await axios.delete(`${import.meta.env.VITE_API_URL}/api/profile/${id}`);
-        localStorage.removeItem("authToken");
-        navigate("/");
+        /* localStorage.removeItem("authToken"); */
+       /*  navigate("/"); */
       } catch (error) {
         console.log(error);
       }
@@ -104,7 +104,7 @@ function EditProfile() {
         <button type="submit">Edit Profile</button>
       </form>
 
-      <button onClick={deleteProfile}>Delete</button>
+      <Link to="/" onClick={deleteProfile}>Delete</Link>
     </section>
   );
 }

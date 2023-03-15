@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
+import "/styles/profile.css";
 
 function Profile() {
   const { user } = useContext(AuthContext);
@@ -23,40 +24,81 @@ function Profile() {
   }, []);
 
   return (
-    <div>
-      <h1>Profile</h1>
-
-      <h3>Hi {updatedUser && updatedUser.name}</h3>
-
+    <div className="user-profile-log mb-4">
+      <h1 className="profile-name-header">Hi, {updatedUser.name}</h1>
       {updatedUser && (
-        <>
-          <img
-            src={updatedUser.imageUrl}
-            alt={`${updatedUser.name}'s profile image`}
-            style={{ maxWidth: "200px" }}
-          />
-
-          <p>{updatedUser.description}</p>
-          {updatedUser && <Link to={`/profile/edit/${updatedUser._id}`}>Edit Profile</Link>} 
-
-          {updatedUser.questionnaire && updatedUser.questionnaire.length > 0 ? (
-            <>
-              <p>Color: {updatedUser.questionnaire[0]}</p>
-              <p>You like to: {updatedUser.questionnaire[1]}</p>
-              <p>Favoutite thing: {updatedUser.questionnaire[2]}</p>
-              <p>What is what: {updatedUser.questionnaire[3]}</p>
-              <Link to="/profile/questionnaire">Redo Questionnaire</Link>
-              <Link to="/clicks"> Clicks and chicks </Link>
-            </>
-          ) : (
-            <Link to="/profile/questionnaire">Start Questionnaire</Link>
-          )}
-        </>
+        <div className="profile-wrapper-log">
+          <div className="user-details-log">
+            {updatedUser.imageUrl && (
+              <div className="profile-image-wrapper-log">
+                <img
+                  src={updatedUser.imageUrl}
+                  alt={`${updatedUser.name}'s profile image`}
+                  className="profile-image-log"
+                  style={{ maxWidth: "200px" }}
+                />
+                <div className="profile-image-edit-link">
+                  <Link to={`/profile/edit/${updatedUser._id}`}>Edit Profile</Link>
+                </div>
+              </div>
+            )}
+            {updatedUser.description && (
+              <p className="profile-description-log">{updatedUser.description}</p>
+            )}
+            {updatedUser.questionnaire && updatedUser.questionnaire.length > 0 ? (
+              <div className="profile-questions-log">
+                <p>
+                  <span className="profile-question-log">Color:</span>{" "}
+                  {updatedUser.questionnaire[0]}
+                </p>
+                <p>
+                  <span className="profile-question-log">You like to:</span>{" "}
+                  {updatedUser.questionnaire[1]}
+                </p>
+                <p>
+                  <span className="profile-question-log">Favourite thing:</span>{" "}
+                  {updatedUser.questionnaire[2]}
+                </p>
+                <p>
+                  <span className="profile-question-log">What is what:</span>{" "}
+                  {updatedUser.questionnaire[3]}
+                </p>
+              </div>
+            ) : (
+              <div className="profile-links-log">
+                <Link className="btn-link" to="/profile/questionnaire">
+                  Start Questionnaire
+                </Link>
+              </div>
+            )}
+          </div>
+          <div
+            className="profile-links-center"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            {updatedUser && (
+              <Link className="btn-link" to="/clicks">
+                Clicks and chicks
+              </Link>
+            )}
+            {updatedUser && updatedUser.questionnaire && (
+              <Link className="btn-link" to="/profile/questionnaire">
+                Redo Questionnaire
+              </Link>
+            )}
+          </div>
+        </div>
       )}
-
-      {/* {updatedUser && <Link to="/clicks"> Clicks and chicks </Link>} */}
     </div>
   );
+  
+  
 }
 
 export default Profile;

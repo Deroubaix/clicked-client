@@ -2,7 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
-import ChatBox from "../components/ChatBox/ChatBox";
+import ChatBox from "../components/ChatBox";
+import "/styles/clickDetails.css";
 
 function ClickDetails() {
   const [userDetails, setUserDetails] = useState([]);
@@ -35,30 +36,51 @@ function ClickDetails() {
   }, []);
 
   return (
-    <div>
-      <h1>User Profile</h1>
+    <div className="user-profile">
       {userDetails && (
-        <>
-          <h3>{userDetails.name}</h3>
-          {userDetails.imageUrl && (
-            <img
-              src={userDetails.imageUrl}
-              alt={`${userDetails.name}'s profile image`}
-              style={{ maxWidth: "200px" }}
-            />
-          )}
-          {userDetails.description && <p>{userDetails.description}</p>}
-          {userDetails.questionnaire && (
-            <>
-              <p>Color: {userDetails.questionnaire[0]}</p>
-              <p>You like to: {userDetails.questionnaire[1]}</p>
-              <p>Favourite thing: {userDetails.questionnaire[2]}</p>
-              <p>What is what: {userDetails.questionnaire[3]}</p>
-            </>
-          )}
-          <button onClick={enterChatRoom}>{showChat ? "Close Message" : "Send Message"}</button>
-          {showChat && <ChatBox userDetails={userDetails} />}
-        </>
+        <div className="profile-wrapper">
+          <div className="user-details">
+            {userDetails.imageUrl && (
+              <div className="profile-image-wrapper">
+                <img
+                  src={userDetails.imageUrl}
+                  alt={`${userDetails.name}'s profile image`}
+                  className="profile-image"
+                />
+                <h3 className="profile-name">{userDetails.name}</h3>
+              </div>
+            )}
+            {userDetails.description && (
+              <p className="profile-description">{userDetails.description}</p>
+            )}
+            {userDetails.questionnaire && (
+              <div className="profile-questions">
+                <p>
+                  <span className="profile-question">Color:</span>{" "}
+                  {userDetails.questionnaire[0]}
+                </p>
+                <p>
+                  <span className="profile-question">You like to:</span>{" "}
+                  {userDetails.questionnaire[1]}
+                </p>
+                <p>
+                  <span className="profile-question">Favourite thing:</span>{" "}
+                  {userDetails.questionnaire[2]}
+                </p>
+                <p>
+                  <span className="profile-question">What is what:</span>{" "}
+                  {userDetails.questionnaire[3]}
+                </p>
+              </div>
+            )}
+          </div>
+          <div className="message-button-container">
+            {showChat && <ChatBox userDetails={userDetails} />}
+            <button className="message-button" onClick={enterChatRoom}>
+              {showChat ? "Close Message" : `Send ${userDetails.name} a Message`}
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

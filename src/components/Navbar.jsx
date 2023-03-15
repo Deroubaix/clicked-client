@@ -7,7 +7,7 @@ import { AuthContext } from '../context/auth.context';
 
 
 function Navigation() {
-    const {loggedIn, user, logout}= useContext(AuthContext)
+    const {loggedIn, user, logout, deletedProfile}= useContext(AuthContext)
 
 
 
@@ -19,7 +19,7 @@ function Navigation() {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto" style={{ display: "flex",  width: "100%" }}>
 
-                <NavLink className="nav-link" to="/" >Home</NavLink>
+                {/* <NavLink className="nav-link" to="/" >Home</NavLink> */}
   
            { loggedIn ? (
 
@@ -28,7 +28,7 @@ function Navigation() {
            
             <NavLink className="nav-link" to="/profile">Profile</NavLink>
 
-            <Link className="nav-link" onClick={logout}>Logout</Link>
+            <Link to='/' className="nav-link" onClick={logout}>Logout</Link>
             </>
             ) :  (
                 <>

@@ -1,6 +1,7 @@
 import {useState, useEffect, createContext} from 'react'
 import axios from 'axios'
 
+
 const AuthContext = createContext()
 
 function AuthWrapper(props) {
@@ -43,6 +44,7 @@ function AuthWrapper(props) {
     const logout = () => {
         localStorage.removeItem("authToken")
         authenticateUser()
+     
     }
 
     const deleteProfile = () => {

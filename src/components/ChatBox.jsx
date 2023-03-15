@@ -1,27 +1,25 @@
 import React, { useState } from "react";
-import ChatRoom from "../../pages/ChatRoom";
+import ChatRoom from "../pages/ChatRoom";
+import "/styles/chatBox.css";
+
 
 function ChatBox({ userDetails }) {
-  const [showChat, setShowChat] = useState(true);
 
-  const toggleChat = () => {
-    setShowChat(!showChat);
-  };
 
   return (
     <div className="chat-container">
-      <div className="chat-header" onClick={toggleChat}>
+      <div className="chat-header" >
         Chat with {userDetails.name}
-        {showChat ? "-" : "+"}
+       
       </div>
-      {showChat && (
+      
         <div className="chat-body">
           <ChatRoom userDetails={userDetails} />
+          
         </div>
-      )}
+
     </div>
   );
 }
 
 export default ChatBox;
-

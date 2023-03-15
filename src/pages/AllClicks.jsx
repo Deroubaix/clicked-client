@@ -129,7 +129,11 @@ function AllClicks() {
       {allClicks.length &&
         allClicks.map((user) => (
           <div className="card m-2" key={user._id} style={{ width: "18rem" }}>
-            <img className="card-img-top rounded-circle" src={user.imageUrl} alt={user.name} />
+          <img
+              className="card-img-top rounded-circle"
+              src={user.imageUrl}
+              alt={user.name}
+              style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }}/>
             <div className="card-body">
               <h5 className="card-title">{user.name}</h5>
               <p className="card-text">{user.description}</p>
