@@ -1,66 +1,87 @@
 
 
-import React, { useContext } from 'react'
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Nav, Navbar} from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
+import { NavDropdown, Button } from 'react-bootstrap';
 
 
-
-import "/styles/navbar.css";
-
+import logo from '../../images/logo2.png';
 
 function Navigation() {
   const { loggedIn, user, logout, deletedProfile } = useContext(AuthContext);
 
   return (
-    <Navbar
-      id="navigate"
-      expand="md"
-      style={{
-        justifyContent: "center",
-        top: "0",
-        backgroundColor: "white",
-        position: "fixed",
-        width: "100%",
-      }}
-    >
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-          <NavLink className="nav-link" to="/">
-            <img src="../images/logo2.png" style={{ width: '40%' }}/>
-          </NavLink>
-          {loggedIn ? (
-            <>
-              <NavLink className="nav-link" to="/clicks" >
-                Your Clicks
-              </NavLink>
-              <NavLink className="nav-link" to="/yourchats" >
-                Your Chats
-              </NavLink>
-              <NavLink className="nav-link" to="/profile">
-                Profile
-              </NavLink>
-              <Link to="/" className="nav-link" onClick={logout}>
-                Logout
-              </Link>
-            </>
-          ) : (
-            <>
-              <NavLink className="nav-link" to="/signup">
-                Signup
-              </NavLink>
-              <NavLink className="nav-link" to="/login">
-                Login
-              </NavLink>
-            </>
-          )}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <>
+      <style>
+        {`
+          .navbar-nav > li {
+            margin-right: 0;
+          }
+
+          .navbar-nav > li:not(:last-child) {
+            margin-right: 15px;
+          }
+
+          .navbar-nav a {
+            padding-left: 30px;
+            padding-right: 30px;
+            text-decoration: none;
+            color:#30287A;
+          }
+
+          .navbar-brand img {
+            max-width: 25%;
+            height: auto;
+          }
+
+          /* Define styles for active link */
+          .nav-link.active {
+            color: #fff;
+            background-color: #30287A;
+            border-radius: 5px;
+            padding: 5px 10px;
+          }
+        `}
+      </style>
+      <Navbar bg="light" expand="lg" className="fixed-top"> {/* add fixed-top class */}
+        {loggedIn ? (
+          <>
+            <Link  className="navbar-brand fw-bold">
+              <img src="../../images/logo2.png" alt="logo" />
+            </Link>
+            <Navbar.Toggle aria-controls="navbarNav" />
+            <Navbar.Collapse id="navbarNav">
+              <Nav className="ms-auto">
+                <NavLink as={Link} to="/clicks" activeClassName="active"> {/* add activeClassName prop */}
+                  Your Clicks
+                </NavLink>
+                <NavLink as={Link} to="/yourchats" activeClassName="active">
+                  Your Chats
+                </NavLink>
+                <NavLink as={Link} to="/profile" activeClassName="active">
+                  Profile
+                </NavLink>
+                <NavLink variant="link" onClick={logout}>
+                  Logout
+                </NavLink>
+              </Nav>
+            </Navbar.Collapse>
+          </>
+        ) : (
+          <Link to="/" className="navbar-brand fw-bold">
+            <img src="../../images/logo2.png" alt="logo" />
+          </Link>
+        )}
+      </Navbar>
+    </>
   );
-  
 }
+
+
+
+
+
 
 export default Navigation;

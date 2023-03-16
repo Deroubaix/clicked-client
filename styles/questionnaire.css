@@ -1,10 +1,12 @@
 
 .questionnaire {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 8rem;
+    
 }
 .question {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  align-items: center;
 }
 .answer-btn {
     display: flex;
@@ -14,7 +16,6 @@
 
   .answer-btn {
     color: #30287A ;
-
     align-items: center;
   
     width: 280px;
@@ -23,21 +24,23 @@
     padding: 0 20px;
     background:  #CBABF7;
     border-radius: 5px;
-    
+   
     
     outline: none;
     border: none;
   
     cursor: pointer;
     text-align: center;
-    transition: all 0.8s linear;
+   /*  transition: all 0.8s linear; */
     
-    letter-spacing: 0.05em;
+   /*  letter-spacing: 0.05em; */
     margin: 25px auto;
   }
   
   .answer-btn:hover {
     background-color: #f5f5f5;
+    align-items: center;
+    text-align: center;
     /* background-color: #F8EBDF;   CHECK WHICH ONE WITH BACKGROUND */
   }
   
@@ -50,21 +53,11 @@
   .answer-btn input[type="radio"]:checked + span {
    /*  background-color: #f32121; */
     color: #fff;
+    text-align: center;
+    align-items: center;
   }
   
-  /* .answer-btn input[type="radio"]:checked + span:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 280px;
-    height: calc(100% + 4px);
-    border-radius: 5px;
-    background-color: #2196f3;
-    z-index: -1;
-    align-items: center;
-  } */
+
   
   .answer-btn span {
     display: inline-block;
@@ -73,6 +66,7 @@
     font-size: 16px;
     font-weight: bold;
     text-align: center;
+    align-items: center;
   }
   .next-btn {
     color: #30287A ;
@@ -101,4 +95,18 @@
     background-color: #30287A ;
     color: white;
   }
+
+    /* .answer-btn input[type="radio"]:checked + span:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 280px;
+    height: calc(100% + 4px);
+    border-radius: 5px;
+    background-color: #2196f3;
+    z-index: -1;
+    align-items: center;
+  } */
   

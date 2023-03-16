@@ -1,5 +1,14 @@
 .signup {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
     
+}
+
+.login-link-sign {
+    text-decoration: none;
+}
+
+.have-account {
+    padding: 10px;
 }

@@ -114,7 +114,9 @@ input:focus {
 }
 
 /*     Sign Up button  */
-.sign-up {background: #B8F2E6;}
+.sign-up {
+    text-decoration: none;
+}
 
 
 /* buttons hover */
