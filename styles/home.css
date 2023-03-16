@@ -24,8 +24,8 @@
  */
 
  .home {
-    font-family: "Recoleta";
-    display: flex;
+  font-family: "Recoleta";
+ display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
