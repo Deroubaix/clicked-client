@@ -9,6 +9,8 @@ function ClickDetails() {
   const [userDetails, setUserDetails] = useState([]);
   const [showChat, setShowChat] = useState(false);
 
+  const { user } = useContext(AuthContext);
+
   const { id } = useParams();
 
   const getUserDetails = async () => {
@@ -27,8 +29,19 @@ function ClickDetails() {
     setShowChat((prevShowChat) => !prevShowChat);
   };
 
-  const enterChatRoom = () => {
-    setShowChat((prevShowChat) => !prevShowChat);
+  const enterChatRoom = async () => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/chat/${user._id}/${
+          userDetails._id
+        }`
+      );
+      console.log(response.data);
+
+      setShowChat((prevShowChat) => !prevShowChat);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -76,8 +89,10 @@ function ClickDetails() {
           </div>
           <div className="message-button-container">
             {showChat && <ChatBox userDetails={userDetails} />}
-            <button className="message-button" onClick={enterChatRoom}>
-              {showChat ? "Close Message" : `Send ${userDetails.name} a Message`}
+            <button className="message-button" onClick={() => enterChatRoom()}>
+              {showChat
+                ? "Close Message"
+                : `Send ${userDetails.name} a Message`}
             </button>
           </div>
         </div>

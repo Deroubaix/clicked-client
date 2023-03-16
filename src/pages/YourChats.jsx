@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
+import "/styles/yourChat.css";
 
 function ChatRooms() {
   const [chatRooms, setChatRooms] = useState([]);
@@ -29,32 +30,35 @@ function ChatRooms() {
     getChats();
   }, [user]);
 
+
+
   return (
-    <div>
-      {/* <h1>hiii</h1>
-      <h1>hiii</h1> */}
-      {/* {chatRooms.map((mychat) => {
-        <div key={chatRooms._id}>
-          <h1>hi!</h1>
-        </div>;
-      })} */}
+    <div className="chat-rooms-container-chat">
       {chatRooms.map((chatRoom) => (
-        <div key={chatRoom._id}>
-          <h2>Chat Room</h2>
-          {/* <p>Other User: {chatRoom.otherUser}</p> */}
-          <ul>
-            {chatRoom.userIds.map((users) => (
-              <li key={users._id}>
-              <img src={users.imageUrl} alt="profilepic" />
-                <p>Author: {message.author.name}</p>
-                <p>Message: {message.text}</p>
-              </li>
-            ))}
-          </ul>
+        <div className="chat-room-chat" key={chatRoom._id}>
+        
+          <div className="user-list-chat">
+            {chatRoom.userIds.length > 1 && (
+              <div className="user-chat" key={chatRoom.userIds[1]._id}>
+                <Link to={`/clicks/${chatRoom.userIds[1]._id}`} >
+                  <img className="profile-pic-chat" src={chatRoom.userIds[1].imageUrl} alt="profilepic" />
+                  <p>{chatRoom.userIds[1].name}</p>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>
   );
-}
+
+
+
+
+  
+  
+
+  
+}  
 
 export default ChatRooms;
