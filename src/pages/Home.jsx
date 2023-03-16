@@ -28,7 +28,7 @@ function Home() {
     <section className='information-home'>
       <h1 > Connect with like-minded people </h1>
       <h4> It's just some clicks away!</h4>
-      <img className="image-friends-home" src='images/Friends.png' alt="friends"/>
+      <img className="image-friends-home" src='../../images/Friends.png' alt="friends"/>
     </section>
 
     </div>
