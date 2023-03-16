@@ -30,14 +30,15 @@
   color: #888;
 }
  */
+ 
+
 
  body {
   background: url('../images/Desktop.png');
   background-size: cover;
-  /* padding: 5px;
-  margin: 0px auto; */
+/* font-family: 'Recoleta'; */
+
   background-repeat: no-repeat;
-font-family: 'Recoleta'; 
 /*   display: flex; */
   justify-content: center;
   align-items: center;
