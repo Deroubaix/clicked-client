@@ -2,7 +2,7 @@
 function Loading() {
     return (
       <div className="loading-container">
-        <img src="/loading.gif" alt="Loading..." />
+        <img src="../../images/Loading.gif" alt="Loading..." />
       </div>
     );
   }
