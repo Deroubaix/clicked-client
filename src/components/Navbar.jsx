@@ -29,8 +29,14 @@ function Navigation() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto" style={{ display: "flex", width: "100%" }}>
+        <NavLink className="nav-link" to="/" style={{ marginLeft: 'auto' }}>
+                <img src="../images/logo2.png" style={{ width: '40%' }}/>
+              </NavLink>
           {loggedIn ? (
             <>
+              <NavLink className="nav-link" to="/clicks" style={{ marginLeft: 'auto' }}>
+                Your Clicks
+              </NavLink>
               <NavLink className="nav-link" to="/yourchats" style={{ marginLeft: 'auto' }}>
                 Your Chats
               </NavLink>
