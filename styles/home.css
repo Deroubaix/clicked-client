@@ -23,84 +23,84 @@
 /*     margin: 0;
  */
 
-.home {
-  font-family: "Recoleta";
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  color: #320077;
-  background-image: url("../images/Desktop-illustration.png");
-}
-
-.titles {
-  height: 1000px;
-  text-align: center;
-}
-
-.main-title-home {
-  font-size: 100px;
-  font-weight: 900;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-}
-.subtitle-home {
-  font-size: 30px;
-  margin-top: -30px;
-  padding-top: 2px;
-}
-
-.home-page-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5%;
-}
-
-.button {
-  display: inline-block;
-  color: #252537;
-
-  width: 240px;
-  height: 50px;
-
-  padding: 0 20px;
-  background: #fff;
-  border-radius: 20px;
-
-  outline: none;
-  border: none;
-
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.2s linear;
-
-  letter-spacing: 0.05em;
-  margin: 1vh;
-}
-
-.button-text {
-  text-decoration: none;
-  color: black;
-  font-size: 24px;
-}
-
-.information-home {
-  height: 300px;
-  text-align: center;
-  padding-bottom: 20%;
-}
-
-.image-friends-home {
-  height: auto;
-  max-width: 70%;
-  margin-bottom: 100px;
-}
-
-@media (max-width: 768px) {
+ .home {
+    font-family: "Recoleta";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    color: #320077;
+    background-image: url("../images/Desktop-illustration.png");
+  }
+  
+  .titles {
+    height: 1000px;
+    text-align: center;
+  }
+  
+  .main-title-home {
+    font-size: 100px;
+    font-weight: 900;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .subtitle-home {
+    font-size: 30px;
+    margin-top: -30px;
+    padding-top: 2px;
+  }
+  
+  .home-page-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+  }
+  
+  .button {
+    display: inline-block;
+    color: #252537;
+  
+    width: 240px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 20px;
+  
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+  
+    letter-spacing: 0.05em;
+    margin: 1vh;
+  }
+  
+  .button-text {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+  }
+  
+  .information-home {
+    height: 300px;
+    text-align: center;
+    padding-bottom: 20%;
+  }
+  
   .image-friends-home {
     height: auto;
-    max-width: 100%;
+    max-width: 70%;
+    margin-bottom: 100px;
   }
-}
+  
+  @media (max-width: 768px) {
+    .image-friends-home {
+      height: auto;
+      max-width: 100%;
+    }
+  }

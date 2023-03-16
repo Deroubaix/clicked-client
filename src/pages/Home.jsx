@@ -10,7 +10,7 @@ function Home() {
       <div className='titles'>
         <h1 className="main-title-home"> Clicked </h1>
         <br></br>
-        <h4 className="subtitle-home">Find your clicks </h4>
+        <h4 className="subtitle-home">Find your people <br></br> Fiend your clicks </h4>
         <br></br>
         <div className="home-page-buttons">
         <button className='button'>
@@ -27,9 +27,9 @@ function Home() {
     <section className='information-home'>
       <h1 > Connect with like-minded people </h1>
       <p> bfjdmlkqfdjsmqlsdkfjmslqdkfnsmqldfndsfkjmsqdlkfjldsqfkj dfslkjdsqfmlkfjd</p>
-      <img className="image-friends-home" src='../../images/Friends.png' alt="friends"/>
+      <img className="image-friends-home" src='images/Friends.png' alt="friends"/>
     </section>
-
+<footer> this is a footer </footer>
     </div>
   
   )
