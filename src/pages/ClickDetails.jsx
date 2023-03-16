@@ -53,7 +53,7 @@ function ClickDetails() {
     getUserDetails();
   }, []);
 
-  return (
+  /* return (
     <div className="user-profile">
       {isLoading ? (
         <Loading />
@@ -107,7 +107,139 @@ function ClickDetails() {
         )
       )}
     </div>
+  ); */
+
+  return (
+
+<div className="user-profile">
+  {isLoading ? (
+    <Loading />
+  ) : (
+    userDetails && (
+      <div className="profile-wrapper">
+        <div className="sidebar-left">
+        <div className="bottom-left-button">
+            <Link to="/clicks" className="btn-primary-chat">Back to Clicks</Link>
+          </div>        
+          </div>
+        <div className="user-details">
+          {userDetails.imageUrl && (
+            <div className="profile-image-wrapper">
+              <img
+                src={userDetails.imageUrl}
+                alt={`${userDetails.name}'s profile image`}
+                className="profile-image"
+              />
+              <h3 className="profile-name">{userDetails.name}</h3>
+            </div>
+          )}
+          {userDetails.description && (
+            <p className="profile-description">Bio: {userDetails.description}</p>
+          )}
+          {userDetails.questionnaire && (
+            <div className="profile-questions">
+              <p>
+                <span className="profile-question">Color:</span>{" "}
+                {userDetails.questionnaire[0]}
+              </p>
+              <p>
+                <span className="profile-question">You like to:</span>{" "}
+                {userDetails.questionnaire[1]}
+              </p>
+              <p>
+                <span className="profile-question">Favourite thing:</span>{" "}
+                {userDetails.questionnaire[2]}
+              </p>
+              <p>
+                <span className="profile-question">What is what:</span>{" "}
+                {userDetails.questionnaire[3]}
+              </p>
+            </div>
+          )}
+        </div>
+        <div className="sidebar-right">
+        <div className="right-sidebar-content">
+            
+          </div>
+                  </div>
+                  <div className="message-button-container">
+              {showChat && <ChatBox userDetails={userDetails} />}
+              <button className="message-button" onClick={() => enterChatRoom()}>
+                {showChat
+                  ? "Close Message"
+                  : `Send ${userDetails.name} a Message`}
+              </button>
+            </div>
+      </div>
+    )
+  )}
+</div>
+  )
+
+/* 
+
+
+return (
+    <div className="facebook-container">
+      <div className="left-sidebar">
+      {isLoading ? (
+        <Loading />
+      ) : (
+        userDetails && (
+          <div className="profile-wrapper">
+            <div className="user-details">
+              {userDetails.imageUrl && (
+                <div className="profile-image-wrapper">
+                  <img
+                    src={userDetails.imageUrl}
+                    alt={`${userDetails.name}'s profile image`}
+                    className="profile-image"
+                  />
+                  <h3 className="profile-name">{userDetails.name}</h3>
+                </div>
+              )}
+              {userDetails.description && (
+                <p className="profile-description">{userDetails.description}</p>
+              )}
+              {userDetails.questionnaire && (
+                <div className="profile-questions">
+                  <p>
+                    <span className="profile-question">Color:</span>{" "}
+                    {userDetails.questionnaire[0]}
+                  </p>
+                  <p>
+                    <span className="profile-question">You like to:</span>{" "}
+                    {userDetails.questionnaire[1]}
+                  </p>
+                  <p>
+                    <span className="profile-question">Favourite thing:</span>{" "}
+                    {userDetails.questionnaire[2]}
+                  </p>
+                  <p>
+                    <span className="profile-question">What is what:</span>{" "}
+                    {userDetails.questionnaire[3]}
+                  </p>
+                </div>
+              )}
+            </div>
+            <div className="message-button-container">
+              {showChat && <ChatBox userDetails={userDetails} />}
+              <button className="message-button" onClick={() => enterChatRoom()}>
+                {showChat
+                  ? "Close Message"
+                  : `Send ${userDetails.name} a Message`}
+              </button>
+            </div>
+          </div>
+        )
+      )}
+    </div>
+    </div>
   );
+ */
+
+
+
 }
 
 
