@@ -138,20 +138,28 @@ function Profile() {
             {updatedUser.questionnaire && updatedUser.questionnaire.length > 0 ? (
               <div className="profile-questions-log">
                 <p>
-                  <span className="profile-question-log">Color:</span>{" "}
+                  <span className="profile-question-log">Ideal sunday is:</span>{" "}
                   {updatedUser.questionnaire[0]}
                 </p>
                 <p>
-                  <span className="profile-question-log">You like to:</span>{" "}
+                  <span className="profile-question-log">Drinking preference:</span>{" "}
                   {updatedUser.questionnaire[1]}
                 </p>
                 <p>
-                  <span className="profile-question-log">Favourite thing:</span>{" "}
+                  <span className="profile-question-log">Music Taste:</span>{" "}
                   {updatedUser.questionnaire[2]}
                 </p>
                 <p>
-                  <span className="profile-question-log">What is what:</span>{" "}
+                  <span className="profile-question-log">Politics:</span>{" "}
                   {updatedUser.questionnaire[3]}
+                </p>
+                <p>
+                  <span className="profile-question-log">Preference:</span>{" "}
+                  {updatedUser.questionnaire[4]}
+                </p>
+                <p>
+                  <span className="profile-question-log">Ideal Holiday:</span>{" "}
+                  {updatedUser.questionnaire[5]}
                 </p>
                 <div className="profile-links-log">
                   <Link className="btn-link" to="/clicks">

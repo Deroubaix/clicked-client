@@ -8,6 +8,7 @@ import '/styles/login.css'
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null)
 
   const navigate = useNavigate();
 
@@ -33,6 +34,7 @@ function Login() {
       navigate("/profile");
     } catch (error) {
       console.log(error);
+      setError(error.response.data.message)
     }
   };
 
@@ -61,6 +63,9 @@ function Login() {
          
         <button className="login-signup-button" type="submit">Login</button>
       </form>
+      {error && 
+      <p className="error-message" >{error}</p>}
+
       <p>Dont have an account?</p>
       <Link className="sign-up" to="/signup">Signup</Link>
       </div>

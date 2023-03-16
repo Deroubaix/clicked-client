@@ -8,11 +8,11 @@ import "/styles/questionnaire.css"
 
 const questionData = [
   {
-    question: "What its the ideal day for you",
-    answers: ["Drinks", "Walks", "Meal", "Stay Home"],
+    question: "What its the ideal sunday for you",
+    answers: ["Drinks", "See Friends", "Watch Sports", "Stay Home and Chill"],
   },
   {
-    question: "Whats your beverage prefences",
+    question: "Whats your beverage prefence",
     answers: ["Alcoholic beverages", "Tea", "Coffee", "Smoothies"],
   },
   {
@@ -24,10 +24,15 @@ const questionData = [
     answers: ["Left", "Centre", "Right", "Centre Left"],
   },
   {
-    question: "Whats your preference",
-    answers: ["Video Games", "Sport", "Right", "Centre Left"],
+    question: "Whats your general preference",
+    answers: ["Video Games", "Sports", "Movies", "Books"],
+  },
+  {
+    question: "Whats your kind of holiday",
+    answers: ["Hiking", "Cruising", "City", "Hotel"],
   },
 ];
+
 function Questionnaire() {
   const [answers, setAnswers] = useState([]);
   const [currentStep, setCurrentStep] = useState(0);
@@ -40,7 +45,7 @@ function Questionnaire() {
   const handleAnswerChange = (answer) => {
     if (currentStep <= questionData.length - 1) {
       setAnswers([...answers, answer]);
-      if (currentStep < 4) setCurrentStep(currentStep + 1);
+      if (currentStep < 5) setCurrentStep(currentStep + 1);
       else submitAnswers(answer);
     }
   };

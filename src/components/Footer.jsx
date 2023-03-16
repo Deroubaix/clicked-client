@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 function Footer() {
@@ -15,3 +15,4 @@ function Footer() {
 }
 
 export default Footer;
+ */
