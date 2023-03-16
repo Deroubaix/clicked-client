@@ -50,7 +50,9 @@ function App() {
         </Routes>
       </div>
       {(window.location.pathname === '/' || window.location.pathname === '/signup' || window.location.pathname === '/login') && <Footer />} 
+      
     </div>
+    
   );
           }  
 
