@@ -8,15 +8,15 @@ import "/styles/questionnaire.css"
 
 const questionData = [
   {
-    question: "What its the ideal sunday for you",
+    question: "What's the ideal sunday for you",
     answers: ["Drinks", "See Friends", "Watch Sports", "Stay Home and Chill"],
   },
   {
-    question: "Whats your beverage prefence",
+    question: "What's your beverage prefence",
     answers: ["Alcoholic beverages", "Tea", "Coffee", "Smoothies"],
   },
   {
-    question: "Whats your music taste",
+    question: "What's your music taste",
     answers: ["Alternative", "Rock", "Eletronic", "Rap"],
   },
   {
@@ -24,11 +24,11 @@ const questionData = [
     answers: ["Left", "Centre", "Right", "Centre Left"],
   },
   {
-    question: "Whats your general preference",
+    question: "What's your general preference",
     answers: ["Video Games", "Sports", "Movies", "Books"],
   },
   {
-    question: "Whats your kind of holiday",
+    question: "What's your kind of holiday",
     answers: ["Hiking", "Cruising", "City", "Hotel"],
   },
 ];

@@ -113,7 +113,7 @@ function EditProfile() {
         <button className="save-btn" type="submit">Save changes</button>
       </form>
 
-      <Link to="/" onClick={deleteProfile}>Delete profile</Link>
+      <Link className="delete" to="/" onClick={deleteProfile} style={{textDecoration: "none"}}>Delete profile</Link>
     </section>
   );
 }

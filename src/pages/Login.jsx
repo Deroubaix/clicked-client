@@ -69,7 +69,7 @@ function Login() {
           </form>
           {error && <p className="error-message" >{error}</p>}
 
-          <p className="have-account">Dont have an account?
+          <p className="have-account">Don't have an account?
           <Link className="sign-up" to="/signup"> Signup</Link>
           </p>
         </div>

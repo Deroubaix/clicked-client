@@ -19,23 +19,23 @@ function Navigation() {
           .navbar-nav > li {
             margin-right: 0;
           }
-
+  
           .navbar-nav > li:not(:last-child) {
             margin-right: 15px;
           }
-
+  
           .navbar-nav a {
             padding-left: 30px;
             padding-right: 30px;
             text-decoration: none;
             color:#30287A;
           }
-
+  
           .navbar-brand img {
-            max-width: 25%;
+            max-width: 20%;
             height: auto;
           }
-
+  
           /* Define styles for active link */
           .nav-link.active {
             color: #fff;
@@ -45,25 +45,27 @@ function Navigation() {
           }
         `}
       </style>
-      <Navbar bg="light" expand="lg" className="fixed-top"> {/* add fixed-top class */}
+      <Navbar bg="light" expand="lg" className="fixed-top" style={{backgroundColor: 'rgba(255, 255, 255, 0.1)'}}> {/* add fixed-top class and inline style */}
         {loggedIn ? (
           <>
+            
+            <Navbar.Toggle aria-controls="navbarNav" />
+            
+            <Navbar.Collapse id="navbarNav">
             <Link  className="navbar-brand fw-bold">
               <img src="../../images/logo2.png" alt="logo" />
             </Link>
-            <Navbar.Toggle aria-controls="navbarNav" />
-            <Navbar.Collapse id="navbarNav">
               <Nav className="ms-auto">
-                <NavLink as={Link} to="/clicks" activeClassName="active"> {/* add activeClassName prop */}
-                  Your Clicks
+                <NavLink as={Link} to="/clicks"  className="active"> {/* add activeClassName prop */}
+                  Clicks
                 </NavLink>
-                <NavLink as={Link} to="/yourchats" activeClassName="active">
-                  Your Chats
+                <NavLink as={Link} to="/yourchats"  className="active">
+                  Chats
                 </NavLink>
-                <NavLink as={Link} to="/profile" activeClassName="active">
+                <NavLink as={Link} to="/profile" className="active">
                   Profile
                 </NavLink>
-                <NavLink variant="link" onClick={logout}>
+                <NavLink className="logout-link" variant="link" onClick={logout}>
                   Logout
                 </NavLink>
               </Nav>

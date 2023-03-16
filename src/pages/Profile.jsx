@@ -52,7 +52,7 @@ function Profile() {
                       style={{ maxWidth: "170px" }}
                     />
                     <div className="profile-image-edit-link">
-                      <Link to={`/profile/edit/${updatedUser._id}`}>Edit Profile</Link>
+                      <Link to={`/profile/edit/${updatedUser._id}`} style={{ textDecoration: 'none' }}>Edit Profile</Link>
                     </div>
                   </div>
                 )}
@@ -89,21 +89,26 @@ function Profile() {
                     <span className="profile-question-log">Ideal Holiday:</span>{" "}
                     {updatedUser.questionnaire[5]}
                   </p>
-                  <div className="profile-links-log">
-                    <Link className="btn-link" to="/clicks">
-                      Clicks and chicks
-                    </Link>
+                  <div className="profile-links-log"  >
+                    
                     {updatedUser && updatedUser.questionnaire && (
-                      <Link className="btn-link" to="/profile/questionnaire">
-                        Redo Questionnaire
+                    
+                      <Link className="btn-link center-text" to="/profile/questionnaire" style={{ textDecoration: 'none' }}><p className="move-down">
+                        Redo Questionnaire</p>
                       </Link>
                     )}
+                    <Link className="btn-link center-text" to="/clicks" style={{ textDecoration: 'none' }}><p className="move-down">
+                     Discover your Clicks</p>
+                    </Link>
+                   
                   </div>
+                 
                 </div>
               ) : (
+               
                 <div className="profile-links-log">
-                  <Link className="btn-link" to="/profile/questionnaire">
-                    Start Questionnaire
+                  <Link className="btn-link center-text" to="/profile/questionnaire" style={{ textDecoration: 'none' }} > <p className="move-down">
+                    Start Questionnaire</p>
                   </Link>
                 </div>
               )}
