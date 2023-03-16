@@ -8,7 +8,7 @@ import { NavDropdown, Button } from 'react-bootstrap';
 
 
 
-import {myLogo} from '../../images/logo2.png';
+import myLogo from '../../images/logo2.png';
 
 function Navigation() {
   const { loggedIn, user, logout, deletedProfile } = useContext(AuthContext);
@@ -73,9 +73,11 @@ function Navigation() {
             </Navbar.Collapse>
           </>
         ) : (
+          <>
           <Link to="/" className="navbar-brand fw-bold">
             <img src={myLogo} alt="logo" />
           </Link>
+          </>
         )}
       </Navbar>
     </>
