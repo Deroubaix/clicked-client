@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '/styles/home.css'
+import myImage from '../../images/Friends.png'
 
 
 function Home() {
@@ -28,7 +29,7 @@ function Home() {
     <section className='information-home'>
       <h1 > Connect with like-minded people </h1>
       <h4> It's just some clicks away!</h4>
-      <img className="image-friends-home" src='../../images/Friends.png' alt="friends"/>
+      <img className="image-friends-home" src={myImage} alt="friends"/>
     </section>
 
     </div>

@@ -7,7 +7,8 @@ import { AuthContext } from '../context/auth.context';
 import { NavDropdown, Button } from 'react-bootstrap';
 
 
-import logo from '../../images/logo2.png';
+
+import {myLogo} from '../../images/logo2.png';
 
 function Navigation() {
   const { loggedIn, user, logout, deletedProfile } = useContext(AuthContext);
@@ -73,7 +74,7 @@ function Navigation() {
           </>
         ) : (
           <Link to="/" className="navbar-brand fw-bold">
-            <img src="../../images/logo2.png" alt="logo" />
+            <img src={myLogo} alt="logo" />
           </Link>
         )}
       </Navbar>

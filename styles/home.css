@@ -31,8 +31,8 @@
     align-items: center;
     margin-top: 8rem;
     color: #320077;
-    background-image: url("../images/Desktop-illustration.png");
-  }
+/*     background-image: url("../images/Desktop-illustration.png");
+ */  }
   
   .titles {
     height: 900px;
@@ -90,6 +90,7 @@
    /*  height: 300px; */
     text-align: center;
     padding-bottom: 5%;
+ 
  
   }
   
