@@ -42,7 +42,7 @@
   .main-title-home {
     font-size: 100px;
     font-weight: 900;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     padding-bottom: 0px;
   }
   .subtitle-home {
@@ -82,7 +82,7 @@
   
   .button-text {
     text-decoration: none;
-    color: black;
+    color: #320077;
     font-size: 24px;
   }
   

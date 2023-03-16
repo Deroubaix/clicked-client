@@ -10,7 +10,7 @@ function Home() {
       <div className='titles'>
         <h1 className="main-title-home"> Clicked </h1>
         <br></br>
-        <h4 className="subtitle-home">Find your people <br></br> Fiend your clicks </h4>
+        <h4 className="subtitle-home">Find your people <br></br> Find your clicks </h4>
         <br></br>
         <div className="home-page-buttons">
         <button className='button'>
