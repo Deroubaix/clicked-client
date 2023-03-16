@@ -29,13 +29,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 8rem;
     color: #320077;
     background-image: url("../images/Desktop-illustration.png");
   }
   
   .titles {
-    height: 1000px;
+    height: 900px;
     text-align: center;
   }
   
@@ -87,9 +87,10 @@
   }
   
   .information-home {
-    height: 300px;
+   /*  height: 300px; */
     text-align: center;
-    padding-bottom: 20%;
+    padding-bottom: 5%;
+ 
   }
   
   .image-friends-home {

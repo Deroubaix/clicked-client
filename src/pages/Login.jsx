@@ -5,6 +5,10 @@ import { AuthContext } from "../context/auth.context";
 import '/styles/login.css'
 
 
+
+
+
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +30,7 @@ function Login() {
         { email, password }
       );
 
-       localStorage.setItem("authToken", response.data.authToken);
+      localStorage.setItem("authToken", response.data.authToken);
       await authenticateUser();
 
       console.log(response.data.authToken);
@@ -40,37 +44,40 @@ function Login() {
 
   return (
     <div className="login-page" >
-    <section className="login-signup-section">
-      <div className="login-signup-box">
-      <header className="login-signup-header">
-      <h1>Login</h1>
-      <p>log in to connect </p>
-      </header>
-      <form className="login" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input className="form-input"
-          type="email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={handleEmail}
-        ></input>
+      <section className="login-signup-section">
+        <div className="login-signup-box">
+          <header className="login-signup-header">
+            <h1>Login</h1>
+            <p>log in to connect </p>
+          </header>
+          <form className="login" onSubmit={handleSubmit}>
+            <label htmlFor="email">Email</label>
+            <input className="form-input"
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              onChange={handleEmail}
+            ></input>
 
-        <label htmlFor="password">Password</label>
-        <input className="form-input"
-     type="password" name="password" id="password" value={password} onChange={handlePassword}
-        ></input>
-         
-        <button className="login-signup-button" type="submit">Login</button>
-      </form>
-      {error && <p className="error-message" >{error}</p>}
+            <label htmlFor="password">Password</label>
+            <input className="form-input"
+              type="password" name="password" id="password" value={password} onChange={handlePassword}
+            ></input>
+             
+            <button className="login-signup-button" type="submit">Login</button>
+          </form>
+          {error && <p className="error-message" >{error}</p>}
 
-      <p>Dont have an account?</p>
-      <Link className="sign-up" to="/signup">Signup</Link>
-      </div>
-    </section>
+          <p>Dont have an account?</p>
+          <Link className="sign-up" to="/signup">Signup</Link>
+        </div>
+      </section>
     </div>
   );
 }
 
 export default Login;
+
+
+

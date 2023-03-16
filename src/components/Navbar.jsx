@@ -6,10 +6,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 
 
-/* import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { Navbar, Nav } from "react-bootstrap";
-import { AuthContext } from "../contexts/AuthContext"; */
+
+import "/styles/navbar.css";
+
 
 function Navigation() {
   const { loggedIn, user, logout, deletedProfile } = useContext(AuthContext);
@@ -28,16 +27,16 @@ function Navigation() {
     >
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto" style={{ display: "flex", width: "100%" }}>
-        <NavLink className="nav-link" to="/" style={{ marginLeft: 'auto' }}>
-                <img src="../images/logo2.png" style={{ width: '40%' }}/>
-              </NavLink>
+        <Nav className="mr-auto" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <NavLink className="nav-link" to="/">
+            <img src="../images/logo2.png" style={{ width: '40%' }}/>
+          </NavLink>
           {loggedIn ? (
             <>
-              <NavLink className="nav-link" to="/clicks" style={{ marginLeft: 'auto' }}>
+              <NavLink className="nav-link" to="/clicks" >
                 Your Clicks
               </NavLink>
-              <NavLink className="nav-link" to="/yourchats" style={{ marginLeft: 'auto' }}>
+              <NavLink className="nav-link" to="/yourchats" >
                 Your Chats
               </NavLink>
               <NavLink className="nav-link" to="/profile">
@@ -64,5 +63,4 @@ function Navigation() {
   
 }
 
-
-export default Navigation
+export default Navigation;
