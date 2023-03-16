@@ -11,7 +11,7 @@ function Home() {
         <h1 className="main-title-home"> Clicked </h1>
         <br></br>
         <h4 className="subtitle-home">Find your people, find who you click with!<br></br>  </h4>
-        <h5>Pick your answers and connect with people who<br></br> have the same things in <i>common as YOU</i></h5>
+        <h5>Pick your answers and connect with people who<br></br> have the same things in <i>common as you</i></h5>
         <br></br>
         <div className="home-page-buttons">
         <button className='button'>
