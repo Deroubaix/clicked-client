@@ -89,13 +89,24 @@ import "/styles/yourChat.css";
 
 
 function ChatRooms() {
+
   const [chatRooms, setChatRooms] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { user } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(true);
   const storedToken = localStorage.getItem("authToken");
+
+  function Loading() {
+    return (
+      <div className="loading-container">
+        <img src="../../images/Loading.gif" alt="Loading..." />
+      </div>
+    );
+  }
 
   const getChats = async () => {
     try {
+      setIsLoading(true); // set isLoading to true before making the API call
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/chats/${user._id}`,
         {
@@ -105,6 +116,8 @@ function ChatRooms() {
       setChatRooms(response.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false); // set isLoading to false after the API call is completed (whether it was successful or not)
     }
   };
 
@@ -115,13 +128,6 @@ function ChatRooms() {
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
-
-/*   const filterChatRooms = () => {
-    return chatRooms.filter((chatRoom) =>
-      chatRoom.userIds[1].name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }; */
-
   
 
   const filteredChatRooms = chatRooms.filter((chatRoom) => {
@@ -148,11 +154,13 @@ function ChatRooms() {
         </button>
       </div>
 
-      {filteredChatRooms.length === 0 && (
+      {isLoading && <Loading />} {/* render the Loading component if isLoading is true */}
+
+      {!isLoading && filteredChatRooms.length === 0 && (
         <p>No results found</p>
       )}
 
-      {filteredChatRooms.map((chatRoom) => (
+      {!isLoading && filteredChatRooms.map((chatRoom) => (
         <div className="chat-room-chat" key={chatRoom._id}>
           <div className="user-list-chat">
             {chatRoom.userIds.length > 1 && (

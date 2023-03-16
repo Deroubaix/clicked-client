@@ -4,10 +4,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "/styles/allClicks.css";
 
+
 function Loading() {
   return (
     <div className="loading-container">
-      <img src="../../images/loading.gif" alt="Loading..." />
+      <img src="../../images/Loading.gif" alt="Loading..." />
     </div>
   );
 }
@@ -29,7 +30,7 @@ function Loading() {
         );
   
         setAllClicks(response.data);
-        setIsLoading(false); // Set loading state to false
+        setIsLoading(false); 
       } catch (error) {
         console.log(error);
       }
