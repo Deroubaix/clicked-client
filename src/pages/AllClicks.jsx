@@ -95,26 +95,24 @@ import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "/styles/allClicks.css";
 
 function AllClicks() {
   const [allClicks, setAllClicks] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const storedToken = localStorage.getItem("authToken");
 
   const getAllClicks = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/clicks`,
+        `${import.meta.env.VITE_API_URL}/api/clicks?name=${searchQuery}`,
         {
           headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
 
-      
-
       setAllClicks(response.data);
-
-      console.log(allClicks);
     } catch (error) {
       console.log(error);
     }
@@ -122,32 +120,64 @@ function AllClicks() {
 
   useEffect(() => {
     getAllClicks();
-  }, []);
+  }, [searchQuery]);
 
   return (
-    <div className="d-flex flex-wrap justify-content-center">
-      {allClicks.length &&
-        allClicks.map((user) => (
-          <div className="card m-2" key={user._id} style={{ width: "18rem" }}>
-          <img
-              className="card-img-top rounded-circle"
-              src={user.imageUrl}
-              alt={user.name}
-              style={{ maxWidth: "50px", maxHeight: "50px", objectFit: "cover" }}/>
-            <div className="card-body">
-              <h5 className="card-title">{user.name}</h5>
-              <p className="card-text">{user.description}</p>
-              <Link to={`/clicks/${user._id}`} className="btn btn-outline-primary">
-                See details
-              </Link>
-            </div>
-          </div>
-        ))}
+    <div className="facebook-container">
+      <div className="left-sidebar">
+        <div className="bottom-left-button">
+          <button className="btn-primary-chat">Back to Profile</button>
+        </div>
+      </div>
+      <div className="main-content">
+        <h1>Your Clicks</h1>
+        <div className="facebook-feed">
+          {allClicks
+            .filter((user) =>
+              user.name.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            .map((user) => (
+              <div className="card" key={user._id}>
+                <div className="card-content">
+                  <div className="card-image-wrapper">
+                    <img
+                      className="card-img-top rounded"
+                      src={user.imageUrl}
+                      alt={user.name}
+                    />
+                  </div>
+                  <div className="card-button-wrapper">
+                    <h5 className="card-title">{user.name}</h5>
+                    <Link
+                      to={`/clicks/${user._id}`}
+                      className="btn-all-clicks "
+                    >
+                      See details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+      <div className="right-sidebar">
+        <div className="right-sidebar-content">
+          <input
+            className="all-clicks-input"
+            type="text"
+            placeholder="Search by name"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+      </div>
     </div>
   );
+  
 }
 
 export default AllClicks;
+
 
 
 /* import React from 'react';

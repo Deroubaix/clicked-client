@@ -6,9 +6,8 @@ import "/styles/yourChat.css";
 
 function ChatRooms() {
   const [chatRooms, setChatRooms] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const { user } = useContext(AuthContext);
-  /* const { chatId } = useParams(); */
-
   const storedToken = localStorage.getItem("authToken");
 
   const getChats = async () => {
@@ -19,7 +18,6 @@ function ChatRooms() {
           headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
-      console.log(response);
       setChatRooms(response.data);
     } catch (error) {
       console.log(error);
@@ -30,20 +28,45 @@ function ChatRooms() {
     getChats();
   }, [user]);
 
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
+  const filteredChatRooms = chatRooms.filter((chatRoom) =>
+    chatRoom.userIds[1].name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="chat-rooms-container-chat">
-      {chatRooms.map((chatRoom) => (
+    <h2 className="your-chats">Chats</h2>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search by name"
+          value={searchQuery}
+          onChange={handleSearch}
+          className="search-input"
+        />
+        <button type="submit" className="search-button-chat">
+          Search
+        </button>
+      </div>
+      
+      {filteredChatRooms.map((chatRoom) => (
         <div className="chat-room-chat" key={chatRoom._id}>
-        
           <div className="user-list-chat">
             {chatRoom.userIds.length > 1 && (
               <div className="user-chat" key={chatRoom.userIds[1]._id}>
-                <Link to={`/clicks/${chatRoom.userIds[1]._id}`} >
-                  <img className="profile-pic-chat" src={chatRoom.userIds[1].imageUrl} alt="profilepic" />
+                <div className="pleaseWork">
+                  <Link to={`/clicks/${chatRoom.userIds[1]._id}`}>
+                    <img
+                      className="profile-pic-chat"
+                      src={chatRoom.userIds[1].imageUrl}
+                      alt="profilepic"
+                    />
+                  </Link>
                   <p>{chatRoom.userIds[1].name}</p>
-                </Link>
+                </div>
               </div>
             )}
           </div>
@@ -51,14 +74,8 @@ function ChatRooms() {
       ))}
     </div>
   );
+}
 
 
-
-
-  
-  
-
-  
-}  
 
 export default ChatRooms;

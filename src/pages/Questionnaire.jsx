@@ -8,20 +8,24 @@ import "/styles/questionnaire.css"
 
 const questionData = [
   {
-    question: "What color do you like?",
-    answers: ["blue", "yellow", "red", "pink"],
+    question: "What its the ideal day for you",
+    answers: ["Drinks", "Walks", "Meal", "Stay Home"],
   },
   {
-    question: "What do you like doing?",
-    answers: ["run", "laugh", "cry", "die"],
+    question: "Whats your beverage prefences",
+    answers: ["Alcoholic beverages", "Tea", "Coffee", "Smoothies"],
   },
   {
-    question: "From something to something",
-    answers: ["yes", "no", "for sure", "for real"],
+    question: "Whats your music taste",
+    answers: ["Alternative", "Rock", "Eletronic", "Rap"],
   },
   {
-    question: "What is what?",
-    answers: ["i", "dont", "know", "anymore"],
+    question: "Politics",
+    answers: ["Left", "Centre", "Right", "Centre Left"],
+  },
+  {
+    question: "Whats your preference",
+    answers: ["Video Games", "Sport", "Right", "Centre Left"],
   },
 ];
 function Questionnaire() {
@@ -36,7 +40,7 @@ function Questionnaire() {
   const handleAnswerChange = (answer) => {
     if (currentStep <= questionData.length - 1) {
       setAnswers([...answers, answer]);
-      if (currentStep < 3) setCurrentStep(currentStep + 1);
+      if (currentStep < 4) setCurrentStep(currentStep + 1);
       else submitAnswers(answer);
     }
   };

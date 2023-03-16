@@ -22,6 +22,8 @@ function Navigation() {
         justifyContent: "center",
         top: "0",
         backgroundColor: "white",
+        position: "fixed",
+        width: "100%",
       }}
     >
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -53,6 +55,7 @@ function Navigation() {
       </Navbar.Collapse>
     </Navbar>
   );
+  
 }
 
 
