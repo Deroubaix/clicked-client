@@ -5,11 +5,12 @@ import '/styles/signup.css'
 
 
 
+
 function Signup() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const [error, setError] = useState(null)
   const handleName = (e) => setName(e.target.value)
   const handleEmail = (e) => setEmail(e.target.value)
   const handlePassword = (e) => setPassword(e.target.value)
@@ -25,6 +26,7 @@ function Signup() {
       navigate('/login')
     } catch (error) {
       console.log(error)
+      setError(error.response.data.message)
     }
   }
 
@@ -48,6 +50,7 @@ function Signup() {
         <button className="login-signup-button" type="submit">Create account</button>
         
       </form>
+      {error && <p className="error-message" >{error}</p>}
       <p>Already have an account?</p>
       <Link to="/login">Login</Link>
       </div>

@@ -77,6 +77,13 @@
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+
+  .btn-primary-chat:hover {
+
+    color: white;
   }
   
   
@@ -86,8 +93,6 @@
     color: #30287A;
 }
   
-  
-
 
 
   .navbar {
@@ -96,5 +101,13 @@
     left: 0;
     right: 0;
     z-index: 100;
+  }
+
+  .loading-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
   }
   

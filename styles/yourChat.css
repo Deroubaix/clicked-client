@@ -5,12 +5,22 @@
   cursor: pointer;
   text-align: center;
   align-items: center;
-  margin-top: 5%;
+  margin-top: 6rem;
+  
 }
 
 .your-chats {
   padding-bottom: 20px;
   color: #320077;
+  
+}
+
+.no-under {
+  display: flex;
+  text-decoration: none;
+  color: #320077;
+  align-items: center;
+  text-align: center;
 }
   
 .chat-room-chat {
@@ -18,8 +28,6 @@
   margin-bottom: 20px;
   background-color: rgb(203, 171, 247, 0.5);
   width: 40%;
- 
-
   border-radius: 30px;
   
 }
@@ -28,12 +36,14 @@
   display: flex;
   margin-top: 10px;
   justify-content: space-evenly;
+  
 }
 
 .user-chat {
   margin-bottom: 10px;
   display: flex;
   align-items: center; 
+  
 }
   
 
@@ -43,18 +53,15 @@
   border-radius: 50%;
   margin-right: 10px;
   margin-bottom: 5px;
+  
 }
 
 .user-chat p {
   margin: 0;
   font-weight: bold;
+  
 }
 
-.profile-name-chat {
-  display: flex;
-  text-decoration: none;
-  text-align: center;
-}
 
 .pleaseWork {
   display: flex;
@@ -62,6 +69,7 @@
   justify-content: center;
   align-items: center;
   color:  #320077;
+  
 }
 
 .search-container {

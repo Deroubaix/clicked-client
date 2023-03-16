@@ -39,7 +39,7 @@ function Login() {
   };
 
   return (
-    <body className="login-page" >
+    <div className="login-page" >
     <section className="login-signup-section">
       <div className="login-signup-box">
       <header className="login-signup-header">
@@ -63,14 +63,13 @@ function Login() {
          
         <button className="login-signup-button" type="submit">Login</button>
       </form>
-      {error && 
-      <p className="error-message" >{error}</p>}
+      {error && <p className="error-message" >{error}</p>}
 
       <p>Dont have an account?</p>
       <Link className="sign-up" to="/signup">Signup</Link>
       </div>
     </section>
-    </body>
+    </div>
   );
 }
 
