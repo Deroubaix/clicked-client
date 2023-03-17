@@ -9,7 +9,7 @@ import "/styles/questionnaire.css"
 const questionData = [
   {
     question: "What's the ideal sunday for you",
-    answers: ["Drinks", "See Friends", "Watch Sports", "Stay Home and Chill"],
+    answers: ["Drinks", "See friends", "Watch sports", "Stay home and chill"],
   },
   {
     question: "What's your beverage prefence",
@@ -21,7 +21,7 @@ const questionData = [
   },
   {
     question: "Politics",
-    answers: ["Left", "Centre", "Right", "Centre Left"],
+    answers: ["Left", "Centre", "Right", "Neutral"],
   },
   {
     question: "What's your general preference",
@@ -29,7 +29,7 @@ const questionData = [
   },
   {
     question: "What's your kind of holiday",
-    answers: ["Hiking", "Cruising", "City", "Hotel"],
+    answers: ["Hiking", "Cruising", "City", "Festivals"],
   },
 ];
 
