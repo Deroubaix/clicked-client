@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import "/styles/chatRoom.css";
 
+
 function ChatRoom({ userDetails }) {
   const [inputValue, setInputValue] = useState("");
   const [chatId, setChatId] = useState("");

@@ -4,12 +4,12 @@ import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import ChatBox from "../components/ChatBox";
 import "/styles/clickDetails.css";
-
+import loading from "../../images/loading.gif"
 
 function Loading() {
   return (
     <div className="loading-container">
-      <img src="../../images/Loading.gif" alt="Loading..." />
+      <img src={loading} alt="Loading..." />
     </div>
   );
 }

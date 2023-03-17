@@ -3,12 +3,12 @@ import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "/styles/allClicks.css";
-
+import loading from "../../images/loading.gif"
 
 function Loading() {
   return (
     <div className="loading-container">
-      <img src="../../images/Loading.gif" alt="Loading..." />
+      <img src={loading} alt="Loading..." />
     </div>
   );
 }
