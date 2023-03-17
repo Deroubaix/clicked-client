@@ -72,44 +72,46 @@ function ChatRooms() {
           Search
         </button>
       </div>
-
-      {isLoading && <Loading />} {/* render the Loading component if isLoading is true */}
-
-      {!isLoading && filteredChatRooms.length === 0 && (
-        <p>No results found</p>
-      )}
-
-      {!isLoading && filteredChatRooms.map((chatRoom) => (
-        <div className="chat-room-chat" key={chatRoom._id}>
-          <div className="user-list-chat">
-            {chatRoom.userIds.length > 1 && (
-              <div className="user-chat" key={chatRoom.userIds[1]._id}>
-                <div className="pleaseWork">
-                  {chatRoom.userIds[0]._id == user._id ? (
-                    <Link className="no-under" to={`/clicks/${chatRoom.userIds[1]._id}`}>
-                      <img
-                        className="profile-pic-chat"
-                        src={chatRoom.userIds[1].imageUrl}
-                        alt="profilepic"
-                      />
-                      <p>{chatRoom.userIds[1].name}</p>
-                    </Link>
-                  ) : (
-                    <Link className="no-under"  to={`/clicks/${chatRoom.userIds[0]._id}`}>
-                      <img
-                        className="profile-pic-chat"
-                        src={chatRoom.userIds[0].imageUrl}
-                        alt="profilepic"
-                      />
-                      <p>{chatRoom.userIds[0].name}</p>
-                    </Link>
-                  )}
-                </div>
+  
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          {filteredChatRooms.length === 0 && <p>No results found</p>}
+  
+          {filteredChatRooms.map((chatRoom) => (
+            <div className="chat-room-chat" key={chatRoom._id}>
+              <div className="user-list-chat">
+                {chatRoom.userIds.length > 1 && (
+                  <div className="user-chat" key={chatRoom.userIds[1]._id}>
+                    <div className="pleaseWork">
+                      {chatRoom.userIds[0]._id == user._id ? (
+                        <Link className="no-under" to={`/clicks/${chatRoom.userIds[1]._id}`}>
+                          <img
+                            className="profile-pic-chat"
+                            src={chatRoom.userIds[1].imageUrl}
+                            alt="profilepic"
+                          />
+                          <p>{chatRoom.userIds[1].name}</p>
+                        </Link>
+                      ) : (
+                        <Link className="no-under"  to={`/clicks/${chatRoom.userIds[0]._id}`}>
+                          <img
+                            className="profile-pic-chat"
+                            src={chatRoom.userIds[0].imageUrl}
+                            alt="profilepic"
+                          />
+                          <p>{chatRoom.userIds[0].name}</p>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        </div>
-      ))}
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
 }
