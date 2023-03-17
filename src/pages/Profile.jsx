@@ -67,7 +67,7 @@ function Profile() {
               {updatedUser.questionnaire && updatedUser.questionnaire.length > 0 ? (
                 <div className="profile-questions-log">
                   <p>
-                    <span className="profile-question-log">Ideal sunday is:</span>{" "}
+                    <span className="profile-question-log">Ideal Sunday is:</span>{" "}
                     {updatedUser.questionnaire[0]}
                   </p>
                   <p>

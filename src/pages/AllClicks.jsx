@@ -48,7 +48,7 @@ function Loading() {
           </div>
         </div>
         <div className="main-content">
-          <h1>Your Clicks</h1>
+          <h1 className="your-clicks">Your Clicks</h1>
           {isLoading ? (
             <Loading />
           ) : (

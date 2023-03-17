@@ -5,7 +5,7 @@ import { Nav, Navbar} from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import { NavDropdown, Button } from 'react-bootstrap';
-
+import '/styles/navbar.css';
 
 
 import myLogo from '../../images/logo2.png';
@@ -34,7 +34,7 @@ function Navigation() {
   
           .navbar-brand img {
             max-width: 20%;
-            height: auto;
+            height: 20%;
           }
   
           /* Define styles for active link */
@@ -44,20 +44,24 @@ function Navigation() {
             border-radius: 5px;
             padding: 5px 10px;
           }
+  
+          /* Make navbar transparent */
+          .navbar {
+          background-color: rgba(255, 255, 255, 0.5) !important;
+          box-shadow: none !important;
+        }
         `}
       </style>
-      <Navbar bg="light" expand="lg" className="fixed-top" style={{backgroundColor: 'rgba(255, 255, 255, 0.1)'}}> {/* add fixed-top class and inline style */}
+      <Navbar bg="light" expand="lg" className="fixed-top" style={{backgroundColor: 'rgba(255, 255, 255, 0.1)'}}>
         {loggedIn ? (
           <>
-            
             <Navbar.Toggle aria-controls="navbarNav" />
-            
             <Navbar.Collapse id="navbarNav">
-            <Link  className="navbar-brand fw-bold">
-              <img src="../../images/logo2.png" alt="logo" />
-            </Link>
+              <Link  className="navbar-brand fw-bold">
+                <img src="../../images/logo2.png" alt="logo" />
+              </Link>
               <Nav className="ms-auto">
-                <NavLink as={Link} to="/clicks"  className="active"> {/* add activeClassName prop */}
+                <NavLink as={Link} to="/clicks"  className="active">
                   Clicks
                 </NavLink>
                 <NavLink as={Link} to="/yourchats"  className="active">

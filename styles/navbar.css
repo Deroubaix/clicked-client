@@ -11,6 +11,38 @@
   color: red;
 } */
 
+nav {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.navbar-nav > li {
+  margin-right: 0;
+}
+
+.navbar-nav > li:not(:last-child) {
+  margin-right: 15px;
+}
+
+.navbar-nav a {
+  padding-left: 30px;
+  padding-right: 30px;
+  text-decoration: none;
+  color:#30287A;
+}
+
+.navbar-brand img {
+  max-width: 30%;
+  height: auto;
+}
+
+/* Define styles for active link */
+.nav-link.active {
+  color: #fff;
+  background-color: #30287A;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
 
 
 

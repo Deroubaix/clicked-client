@@ -124,6 +124,24 @@
   
   }  
 
+  .btn-link:hover {
+    color: white;
+    width: 280px;
+    height: 50px;
+    padding: 0 20px;
+   
+    border-radius: 5px;
+    margin: 1.5rem;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+   /*  transition: all 0.8s linear; */
+    letter-spacing: 0.05em;
+  
+  }  
+
   .profile-image-edit-link {
     text-decoration: none;
     font-weight: bold;
@@ -134,5 +152,6 @@
   .move-down {
     text-align: center;
     margin-top: 0.8rem;
+    color: white;
   }
   
