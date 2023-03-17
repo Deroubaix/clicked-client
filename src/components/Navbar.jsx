@@ -10,6 +10,8 @@ import '/styles/navbar.css';
 
 import myLogo from '../../images/logo2.png';
 
+
+
 function Navigation() {
   const { loggedIn, user, logout, deletedProfile } = useContext(AuthContext);
 
