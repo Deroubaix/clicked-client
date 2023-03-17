@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import "/styles/profile.css";
+import loading from "../../images/loading.gif"
 
 function Loading() {
   return (
     <div className="loading-container">
-      <img src="../../images/Loading.gif" alt="Loading..." />
+      <img src={loading} alt="Loading..." />
     </div>
   );
 }
@@ -66,7 +67,7 @@ function Profile() {
               {updatedUser.questionnaire && updatedUser.questionnaire.length > 0 ? (
                 <div className="profile-questions-log">
                   <p>
-                    <span className="profile-question-log">Ideal sunday is:</span>{" "}
+                    <span className="profile-question-log">Ideal Sunday is:</span>{" "}
                     {updatedUser.questionnaire[0]}
                   </p>
                   <p>
