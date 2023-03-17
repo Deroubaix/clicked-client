@@ -36,6 +36,7 @@ function Navigation() {
   
           .navbar-brand img {
             max-width: 20%;
+            min-width: 20%
             height: 20%;
           }
   
@@ -49,24 +50,29 @@ function Navigation() {
   
           /* Make navbar transparent */
           .navbar {
-          background-color: rgba(255, 255, 255, 0.5) !important;
-          box-shadow: none !important;
-        }
+            background-color: rgba(255, 255, 255, 0.5) !important;
+            box-shadow: none !important;
+          }
         `}
       </style>
-      <Navbar bg="light" expand="lg" className="fixed-top" style={{backgroundColor: 'rgba(255, 255, 255, 0.1)'}}>
+      <Navbar
+        bg="light"
+        expand="lg"
+        className="fixed-top"
+        style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+      >
+        <Link to="/" className="navbar-brand fw-bold">
+          <img src={myLogo} alt="logo" />
+        </Link>
         {loggedIn ? (
           <>
             <Navbar.Toggle aria-controls="navbarNav" />
             <Navbar.Collapse id="navbarNav">
-              <Link  className="navbar-brand fw-bold">
-                <img src="../../images/logo2.png" alt="logo" />
-              </Link>
               <Nav className="ms-auto">
-                <NavLink as={Link} to="/clicks"  className="active">
+                <NavLink as={Link} to="/clicks" className="active">
                   Clicks
                 </NavLink>
-                <NavLink as={Link} to="/yourchats"  className="active">
+                <NavLink as={Link} to="/yourchats" className="active">
                   Chats
                 </NavLink>
                 <NavLink as={Link} to="/profile" className="active">
@@ -78,16 +84,11 @@ function Navigation() {
               </Nav>
             </Navbar.Collapse>
           </>
-        ) : (
-          <>
-          <Link to="/" className="navbar-brand fw-bold">
-            <img src={myLogo} alt="logo" />
-          </Link>
-          </>
-        )}
+        ) : null}
       </Navbar>
     </>
   );
+  
 }
 
 
