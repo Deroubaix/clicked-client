@@ -14,6 +14,7 @@
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2% 5%;
     background-image: linear-gradient(-225deg, rgba(245, 189, 127, 0.5) 50%, rgb(203, 171, 247, 0.5) 50%);
+   
 }
 
  .login-page {
@@ -36,9 +37,10 @@ background-image: url('images/Desktop-illustration.png');
 
 
 .login-signup-box{
-    margin: 20px;
+    margin-left: 2%;
+    margin-right: 3%;  /* so it's centered for the presentation */
 }
-
+ 
 
 /* the header form form */
 .login-signup-header {
@@ -58,7 +60,7 @@ background-image: url('images/Desktop-illustration.png');
 
 /* inputs form  */
 .form-input {
-    width: 280px;
+ /*    width: 280px; */
     height: 50px;
   
     margin-top: 2%;
@@ -93,7 +95,7 @@ input:focus {
     display: inline-block;
     color: #252537;
   
-    width: 280px;
+/*     width: 280px; */
     height: 50px;
   
     padding: 0 20px;
