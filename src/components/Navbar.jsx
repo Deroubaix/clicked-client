@@ -8,7 +8,7 @@ import { NavDropdown, Button } from 'react-bootstrap';
 import '/styles/navbar.css';
 
 
-import myLogo from '../../images/logo2.png';
+/* import myLogo from '../../images/logo2.png'; */
 
 
 
@@ -25,6 +25,7 @@ function Navigation() {
   
           .navbar-nav > li:not(:last-child) {
             margin-right: 15px;
+            
           }
   
           .navbar-nav a {
@@ -61,8 +62,8 @@ function Navigation() {
         className="fixed-top"
         style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
       >
-        <Link to="/" className="navbar-brand fw-bold">
-          <img src={myLogo} alt="logo" />
+        <Link to="/" className="navbar-brand fw-bold"> <h2>
+          Clicked </h2>
         </Link>
         {loggedIn ? (
           <>
