@@ -139,20 +139,24 @@ function ClickDetails() {
           {userDetails.questionnaire && (
             <div className="profile-questions">
               <p>
-                <span className="profile-question">Color:</span>{" "}
+                <span className="profile-question">Ideal Sunday is:</span>{" "}
                 {userDetails.questionnaire[0]}
               </p>
               <p>
-                <span className="profile-question">You like to:</span>{" "}
+                <span className="profile-question">Drinking preference:</span>{" "}
                 {userDetails.questionnaire[1]}
               </p>
               <p>
-                <span className="profile-question">Favourite thing:</span>{" "}
+                <span className="profile-question">Music taste:</span>{" "}
                 {userDetails.questionnaire[2]}
               </p>
               <p>
-                <span className="profile-question">What is what:</span>{" "}
+                <span className="profile-question">Politics:</span>{" "}
                 {userDetails.questionnaire[3]}
+              </p>
+              <p>
+                <span className="profile-question">Ideal Holiday:</span>{" "}
+                {userDetails.questionnaire[4]}
               </p>
             </div>
           )}
