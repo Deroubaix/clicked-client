@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import "/styles/yourChat.css";
-
+import loading from "../../images/loading.gif"
 
 
 
@@ -18,7 +18,7 @@ function ChatRooms() {
   function Loading() {
     return (
       <div className="loading-container">
-        <img src="../../images/Loading.gif" alt="Loading..." />
+        <img src={loading} alt="Loading..." />
       </div>
     );
   }
