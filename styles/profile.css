@@ -59,16 +59,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
   
   .profile-image-log {
     
- 
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 30px;
       margin-top: 10%;
+      align-items: center;
+    text-align: center;
     
+  }
+  .profile-image-wrapper-log {
+    align-items: center;
+    text-align: center;
   }
   
   .profile-name-header {
